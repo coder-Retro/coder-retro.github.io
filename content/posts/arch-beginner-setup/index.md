@@ -7,7 +7,7 @@ date: 2026-03-19
 
 # Introduction
 <div style="text-align: justify">
-Hey there! since you are a beginner trying to install arch linux in your system for probably the first time, I will guide you through this process step by step and keep it as simplistic for you as possible. Keep in mind that this guide is aimed towards installing Arch as your only OS on the system and not for dual booting Arch along with your existing OS. Now then, let's begin the process.
+Hey there! since you are a beginner trying to install Arch Linux in your system for probably the first time, I will guide you through this process step by step and keep it as simplistic for you as possible. Keep in mind that this guide is aimed towards installing Arch as your only OS on the system and not for dual booting Arch along with your existing OS. Now then, let's begin the process.
 </div>
 
 ## Downloading Pre-Requisites
