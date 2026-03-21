@@ -24,12 +24,12 @@ Go to this site and scroll down to the download links section. There will be alo
 <img src="img/DownloadServers.png" alt="Download Servers" width=600 style="border-radius: 5px">
 I have provided a small screenshot but this list will be quiet long in reality. Now select the closest server to you for the best download speed. You will be shown a screen with several download links of Arch Linux, click the iso link as shown:
 <img src="img/IsoLink.png" alt="Iso Link" width=600 style="border-radius: 5px">
-After this, your Arch iso will start downloading, now lets go on to rufus.
+After this, your Arch iso will start downloading, now let's go on to rufus.
 </div>
 
 ### Download Rufus
 <div style="text-align: justify">
-Rufus is a software used for creating a bootable USB which we need to install arch from. Now in order to download rufus, let's go to the official rufus site
+Rufus is a software used for creating a bootable USB, which we need to install arch from. Now in order to download rufus, let's go to the official rufus site
 "<a target="_blank" href="https://rufus.ie/en/">Rufus Site</a>". Then scroll down to the download section and select any of the executables:
 <img src="img/RufusDownloadLinks.png" alt="Rufus Download Links" width=600 style="border-radius: 5px">
 After this, rufus will start downloading in your system.
@@ -42,20 +42,20 @@ After downloading the Arch iso and rufus, it's time to create a bootable USB. So
 
 ### Rufus Setup
 <div style="text-align: justify">
-Rufus will open a new window asking to fill the parameters for creating the bootable USB for your system, it will require fields such as the USB you want to work on and the iso you want to use. So select your plugged USB drive. Then for the second field which says (Boot selection), click on the select button on the right and look for the arch iso you downloaded previously. Select the arch iso confirm it. After these two, you will be left with Partition Scheme  and Target System, select GPT for partition sheme and UEFI for target system. Now go to the Volume label field and give your USB a name like "ArchInstallationUSB". Leave the remaining options as it is. By the end this whole setting process, your rufus should look a bit like this:
+Rufus will open a new window asking to fill the parameters for creating the bootable USB for your system, it will require fields such as the USB you want to work on and the iso you want to use. So select your plugged USB drive. Then for the second field which says (Boot selection), click on the select button on the right and look for the arch iso you downloaded previously. Select the arch iso and confirm it. After these two, you will be left with Partition Scheme  and Target System, select GPT for partition scheme and UEFI for target system. Now go to the Volume label field and give your USB a name like "ArchInstallationUSB". Leave the remaining options as it is. By the end of this whole setting process, your rufus should look a bit like this:
 <img src="img/RufusParameters.png" alt="Rufus Parameters" width=450 style="border-radius: 5px">
 Your Device (USB) might be different than mine so it's ok if your selection appears a bit different. After doing all this, click start button on the bottom to start creating bootable USB. Now wait as this process will take a few minutes. When it says "Ready", congratulations! your bootable USB is ready to go.
 </div>
 
 ## Booting Into Arch USB
 <div style="text-align: justify">
-Now that your USB is ready we need to boot into it by doing three main steps:
+Now that your USB is ready, we need to boot into it by doing three main steps:
 <ol>
     <li>Change Boot Sequence</li>
     <li>Turn Off Secure Boot</li>
     <li>Turn Off Raid</li>
 </ol> 
-All three of these are done from the bios of our system so we need to begin by going to the bios. For this process we will need to restart our system and from this point onward, we will not be returning to our desktop untill the Arch Linux has finished installing. Since Arch installation will wipe the disk clean, I would suggest you should backup the data from your disk onto another device or USB if it's important to you because otherwise, it will all be lost. After you are done with this, let's continue with the bios setup.
+All three of these are done from the bios of our system, so we need to begin by going to the bios. For this process we will need to restart our system and from this point onward, we will not be returning to our desktop untill the Arch Linux has finished installing. Since Arch installation will wipe the disk clean, I would suggest you should backup the data from your disk onto another device or USB if it's important to you because otherwise, it will all be lost. After you are done with this, let's continue with the bios setup.
 </div>
 
 ### Change Boot Sequence
@@ -65,7 +65,7 @@ So restart your system and keep pressing the bios setup key depending on your sy
 
 ### Turn Off Secure Boot
 <div style="text-align: justify">
-Now look for another setting called "Secure Boot", it shall also be located in the boot settings of your bios. In order to make sure that Arch installation goes smoothly, "Secure Boot" should be disabled. Upon finding "Secure Boot" in your bios setup, disable it.
+Now look for another setting called "Secure Boot", it will also be located in the boot settings of your bios. In order to make sure that Arch installation goes smoothly, "Secure Boot" should be disabled. Upon finding "Secure Boot" in your bios setup, disable it.
 </div>
 
 ### Turn Off Raid
@@ -226,7 +226,7 @@ First setting will be the "Language", set it to your preferred language.
 
 Then leave the "Mirrors" untouched. "Locales" is used to setup your keyboard layouts and by default it will be US keyboard so I will leave it at that, you can change it if you want to.
 
-Third will be the "Disk configuration", hit enter to go into the disk configuration. Then go into "Partitioning". Since this a guide for beginners let's go for the easiest option and select "Use a best-effort default partition layout". In this Arch itself makes the simplest disk partition to setup its boot swap and remaining parition. Otherwise we would have to do that manually. Now select the drive where you want to install Arch by using arrow keys, for me it is /dev/sda. Press tab-key or space-bar on the drive to select it, hit enter. Then choose the btrfs file-system from the displayed menu, confirm by selecting "yes". Then select the "Use compression" from the displayed menu. Now select back to get back to main menu.
+Third will be the "Disk configuration", hit enter to go into the disk configuration. Then go into "Partitioning". Since this a guide for beginners let's go for the easiest option and select "Use a best-effort default partition layout". In this, Arch itself makes the simplest disk partition to setup its boot swap and remaining parition. Otherwise we would have to do that manually. Now select the drive where you want to install Arch by using arrow keys, for me it is /dev/sda. Press tab-key or space-bar on the drive to select it, hit enter. Then choose the btrfs file-system from the displayed menu, confirm by selecting "yes". Then select the "Use compression" from the displayed menu. Now select back to get back to main menu.
 
 Next is the "Bootloader", go into it and select Grub as your bootloader.
 
@@ -236,7 +236,7 @@ Set the "Hostname" as your liking. For now, let's go with "MyComputer".
 
 Now go into the "Root password" to set your root password, save this password somewhere with you as this is really important for some actions with linux later on.
 
-Then we need to create a "User account", go into it and select "Add a user" from the menu. Then enter a username for your user account, after that set a password for your user account. System will prompt you to select this account as superuser or sudo,  select "yes". Then select "Confirm and exit" to return to main menu.
+Then we need to create a "User account", go into it and select "Add a user" from the menu. Then enter a username for your user account, after that set a password for your user account (save this user password as well because you will constantly need it to login into your system after bootup). System will prompt you to select this account as superuser or sudo,  select "yes". Then select "Confirm and exit" to return to main menu.
 
 After that, there is the "Profile". This is basically gonna be our desktop environment or you can say the "GUI" for desktop. Go into profile and select Desktop from the menu. A list of available Desktop-Environments will be displayed, you can even change this later on so for now I would suggest to select "KDE Plasma". Now you will see a menu to select "Graphics Driver" and "Greeter", go into "Graphics Driver" and select the driver based on your GPU, if you have an intel GPU select the "Intel (open-source)", similary if you have AMD or NVIDIA GPU then select the respective driver. Then go into "Greeter" and select "sddm" as your greeter. Now go back to main menu.
 
@@ -250,12 +250,12 @@ Now we are on "Network configuration". Go into it and select the "NetworkManager
 
 At last, we need to select the "Timezone", now this is gonna be different for you depending on where you live, so search on google for your timezone and select it from the menu here, now return to the main menu.
 
-At this point we are done with our system configuration so make sure that you have selected everything correctly before going ahead. Also after doing disk configuration, you might be getting another option called "Disk encryption" after it, ignore it. If everything else seems fine then go to the bottom of main menu and select "Install", it will ask for confirmation, hit enter to confirm, you will see a countdown and Arch Linux will take the wheel for a while now. This will take some time to setup and install everything so go and have a coffee or something untill it's done.
+At this point we are done with our system configuration so make sure that you have selected everything correctly before going ahead. Also, after doing disk configuration, you might be getting another option called "Disk encryption" after it, ignore it. If everything else seems fine then go to the bottom of main menu and select "Install", it will ask for confirmation, hit enter to confirm, you will see a countdown and Arch Linux will take the wheel for a while now. This will take some time to setup and install everything so go and have a coffee or something untill it's done.
 </div>
 
 ## Post Installation Steps
 <div style="text-align: justify">
-Congratulations! by now, you have successfully installed Arch Linux in your system so give yourself a pat on the back since this has been a hard journey up untill now. The only thing left is to perform some post installation steps to make the system usable as a daily driver so let's continue, by now your screen shall have a prompt asking you "chroot into newly created installation and perform post-installation configuration?". Select "yes". Let's run a basic command again to make sure everything is upto par. Type in the following command:
+Congratulations! by now, you have successfully installed Arch Linux in your system so give yourself a pat on the back since this has been a hard journey up untill now. The only thing left is to perform some post installation steps to make the system usable as a daily driver so let's continue, by now your screen should have a prompt asking you "chroot into newly created installation and perform post-installation configuration?". Select "yes". Let's run a basic command again to make sure everything is upto par. Type in the following command:
 </div>
 
 ```bash
@@ -281,7 +281,7 @@ exit
 ```
 
 <div style="text-align: justify">
-Now we are done with the installation and setup so we need to restart our system and boot into our Hard Drive instead of the USB so type in the following command to shutdown the system:
+Now we are done with the installation and setup so we need to restart our system and boot into our Hard Drive instead of the USB, so type in the following command to shutdown the system:
 </div>
 
 ```bash
