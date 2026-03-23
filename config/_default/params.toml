@@ -68,7 +68,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 [author]
   name = "Retro"
   image = "img/retro.jpg" # Make sure this matches your file in assets/img/
-  headline = "Ai Student at NUCES | Coder"
+  headline = "Ai Student at NUCES | Coder 💻"
   bio = "A Guy Who's Interested In Tech."
   links = [
     { github = "https://github.com/coder-Retro" },
