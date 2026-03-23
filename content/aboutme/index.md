@@ -1,6 +1,11 @@
-# About Me
+---
+draft: false
+title: 'About Me'
+date: 2026-03-20
+---
+
 <div style="text-align: justify">
-Lets start with who I am and what's my intention with this blog.
+Let's start with who I am and what's my intention with this blog.
 </div>
 
 ## Introduction
@@ -24,7 +29,7 @@ Through the course of my journey in tech, I have gotten my hand on some neat pro
     <li>HTML/CSS</li>
     <li>Graphic Design</li>
 </ul>
-I think judging by all of this till now you might already be able to tell that most of the time, I will be seen around my laptop, and around my friends as well, which are also explorers like me. Yup, that's my entire circle.
+I think judging by all of this till now you might already be able to tell that most of the time, I will be seen around my laptop, and around my friends as well, which are also explorers like me. Yup, that's most of my circle.
 </div>
 
 ## Miscellaneous
