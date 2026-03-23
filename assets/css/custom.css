@@ -1,19 +1,9 @@
-/* We target the exact classes you found */
 img.mb-2.h-36.w-36.rounded-full {
-    /* Use box-sizing to ensure the border is INSIDE the 36x36 dimensions */
-    box-sizing: border-box !important;
-
-    /* The Border */
-    border: 4px solid #ffffff !important;
-
-    /* Padding creates a 'ring' effect between the photo and the border */
-    padding: 4px !important;
-
-    /* Blowfish defaults this to 'cover', but let's be safe */
-    object-fit: cover !important;
-
-    /* Ensure the zoom script doesn't interfere with the border display */
-    transform: none !important;
+    box-sizing: border-box;
+    border: 4px solid #ffffff;
+    padding: 4px;
+    object-fit: cover;
+    transform: none;
 }
 body {
     background: linear-gradient(135deg,#242424,#000000); 
