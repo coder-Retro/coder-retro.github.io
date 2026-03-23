@@ -1,7 +1,6 @@
 ---
 draft: false
 title: 'Arch Linux Beginner Setup'
-showTableOfContents: true
 date: 2026-03-19
 ---
 
