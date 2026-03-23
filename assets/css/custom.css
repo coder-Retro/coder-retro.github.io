@@ -8,9 +8,11 @@ img.mb-2.h-36.w-36.rounded-full {
 }
 /* General Body Settings */
 body {
+    
     margin: 0;
     color: white;
     overflow-x: hidden;
+    max-width: 100%;
 }
 /* Background Image And Filter Settings */
 body::before {
