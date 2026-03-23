@@ -77,7 +77,7 @@ Use your arrow keys to select the first option as shown in the this screenshot. 
 
 ## Arch Installation
 <div style="text-align: justify">
-Now we are going to dive into the actual installation process of Arch Linux on our system. By now you should be on a command line interface and the system should be waiting for you to start entering the commands. First of all lets clear the screen to not be disturbed by all the pre-existing text, for this press "Ctrl + L", this will clear the terminal anytime of all the text. Now follow each command precisely to not face any difficulties during the installation.
+Now we are going to dive into the actual installation process of Arch Linux on our system. By now you should be on a command line interface and the system should be waiting for you to start entering the commands. First of all let's clear the screen to not be disturbed by all the pre-existing text, for this press "Ctrl + L", this will clear the terminal anytime of all the text. Now follow each command precisely to not face any difficulties during the installation.
 </div>
 
 ### Connecting To Internet
@@ -90,7 +90,7 @@ ping google.com
 ```
 
 <div style="text-align: justify">
-If you start receiving data packets then it means you have an internet connection established so skip to <a href="#sync-system-packages">Sync System Packages</a>, but if you receive an error message "Temporary Failure in name resolution" then type in the following command:
+If you start receiving data packets then it means you have an internet connection established so skip to <a href="#sync-system-packages">Sync System Packages</a>, but if you receive an error message "Temporary Failure in name resolution", then type in the following command:
 </div>
 
 ```bash
@@ -98,7 +98,7 @@ iwctl
 ```
 
 <div style="text-align: justify">
-This command is basically is our gateway to the internet, after running this command we will enter the iwctl CLI (command line interface), then we need to check our NIC (Network Interface Card). So now type the following:
+This command is basically is our gateway to the internet. After running this command, we will enter the iwctl CLI (command line interface). Then we need to check our NIC (Network Interface Card). So now type the following:
 </div>
 
 ```bash
@@ -114,7 +114,7 @@ device wlan0 show
 ```
 
 <div style="text-align: justify">
-You will get some additional info about you NIC. After this we need to run our next command, so type the following command to get a list of all the networks on our NIC, (replace wlan0 with your own NIC name):
+You will get some additional info about you NIC. After this, we need to run our next command. So type the following command to get a list of all the networks on our NIC, (replace wlan0 with your own NIC name):
 </div>
 
 ```bash
@@ -122,7 +122,7 @@ station wlan0 get-networks
 ```
 
 <div style="text-align: justify">
-This will give us the list of the wifi networks that are detected by out NIC, now my wifi is called "HUAWEI-4bxW" so I will type the connect command next, (replace wlan0 and the wifi name with your own):
+This will give us the list of the wifi networks that are detected by our NIC. Now my wifi is called "HUAWEI-4bxW", so I will type the connect command next, (replace wlan0 and the wifi name with your own):
 </div>
 
 ```bash
@@ -130,7 +130,7 @@ station wlan0 connect HUAWEI-4bxW
 ```
 
 <div style="text-align: justify">
-Terminal will prompt you to enter your wifi password so enter your password (it will appear as *s on the screen like):
+Terminal will prompt you to enter your wifi password, so enter your password (it will appear as *s on the screen like):
 </div>
 
 ```bash
@@ -146,12 +146,12 @@ exit
 ```
 
 <div style="text-align: justify">
-Now try the "ping google.com" command again to check if internet is connected correctly, this time you will start receiving data packets perfectly, upnext is the syncronization of system pakages.
+Now try the "ping google.com" command again to check if internet is connected correctly, this time you will start receiving data packets perfectly. Upnext is the syncronization of system pakages.
 </div>
 
 ### Sync System Packages
 <div style="text-align: justify">
-Now we need to synchronize system packages, for this we will run the following command:
+Now we need to synchronize system packages. For this, we will run the following command:
 </div>
 
 ```bash
@@ -172,7 +172,7 @@ By the time this command completes, your system packages should be synchronized.
 
 ### Format Disk
 <div style="text-align: justify">
-Clear the screen using "Ctrl+L", now let's start formatting the disk. Type the following command to display the list of your disk partitions:
+Clear the screen using "Ctrl+L". Now let's start formatting the disk. Type the following command to display the list of your disk partitions:
 </div>
 
 ```bash
@@ -195,7 +195,7 @@ Now when it asks for "Command(? for help):", press "x" and hit enter. Then it wi
 
 ### Setup Arch Install Script
 <div style="text-align: justify">
-Now after all this, type in the following command to check the authenticity and integrity of the Arch Linux packages, this command makes sure that the packages are trusted before installation:
+Now after all this, type in the following command to check the authenticity and integrity of the Arch Linux packages, this command makes sure that the packages are from trusted sources before installation:
 </div>
 
 ```bash
