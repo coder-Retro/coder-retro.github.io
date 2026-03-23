@@ -11,10 +11,15 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
- name = "<span style='font-size: 20px; font-weight: 500;'>Posts</span>"
- pageRef = "posts"
- weight = 10
- 
+name = "<b>Posts</b>"
+pageRef = "posts"
+weight = 10
+
+[[main]]
+name = "<b>About Me</b>"
+pageRef = "aboutme"
+weight = 20
+
 # [[main]]
 #  name = "Parent"
 #  weight = 20
