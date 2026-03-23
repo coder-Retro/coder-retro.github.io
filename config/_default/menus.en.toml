@@ -11,14 +11,19 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
+name = "<b>Home</b>"
+url = "/"
+weight = 10
+
+[[main]]
 name = "<b>Posts</b>"
 pageRef = "posts"
-weight = 10
+weight = 20
 
 [[main]]
 name = "<b>About Me</b>"
 pageRef = "aboutme"
-weight = 20
+weight = 30
 
 # [[main]]
 #  name = "Parent"
