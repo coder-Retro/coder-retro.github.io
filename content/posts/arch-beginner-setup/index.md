@@ -9,13 +9,13 @@ date: 2026-03-19
 Hey there! since you are a beginner trying to install Arch Linux in your system for probably the first time, I will guide you through this process step by step and keep it as simplistic for you as possible. Keep in mind that this guide is aimed towards installing Arch as your only OS on the system and not for dual booting Arch along with your existing OS. Now then, let's begin the process.
 </div>
 
-## Downloading Pre-Requisites
+## Download Pre-Requisites
 So in order to install arch linux, we need three main components to begin:
 1. Arch Linux iso
 2. Rufus / Balena Etcher ( I will use rufus here )
 3. A USB
 
-### Download Arch Iso
+### Arch Iso
 <div style="text-align: justify">
 So first let's download the arch linux iso from its official site
 "<a target="_blank" href="https://archlinux.org/download/">Arch Linux Site</a>"
@@ -26,7 +26,7 @@ I have provided a small screenshot but this list will be quiet long in reality. 
 After this, your Arch iso will start downloading, now let's go on to rufus.
 </div>
 
-### Download Rufus
+### Rufus
 <div style="text-align: justify">
 Rufus is a software used for creating a bootable USB, which we need to install arch from. Now in order to download rufus, let's go to the official rufus site
 "<a target="_blank" href="https://rufus.ie/en/">Rufus Site</a>". Then scroll down to the download section and select any of the executables:
@@ -34,7 +34,7 @@ Rufus is a software used for creating a bootable USB, which we need to install a
 After this, rufus will start downloading in your system.
 </div>
 
-## Creating Bootable USB
+## Create Bootable USB
 <div style="text-align: justify">
 After downloading the Arch iso and rufus, it's time to create a bootable USB. So start by plugging in your USB to the system. Now go to the folder where rufus was downloaded and launch the rufus exe file.
 </div>
@@ -46,7 +46,7 @@ Rufus will open a new window asking to fill the parameters for creating the boot
 Your Device (USB) might be different than mine so it's ok if your selection appears a bit different. After doing all this, click start button on the bottom to start creating bootable USB. Now wait as this process will take a few minutes. When it says "Ready", congratulations! your bootable USB is ready to go.
 </div>
 
-## Booting Into Arch USB
+## Boot Into Arch USB
 <div style="text-align: justify">
 Now that your USB is ready, we need to boot into it by doing three main steps:
 <ol>
@@ -79,7 +79,7 @@ Use your arrow keys to select the first option as shown in the this screenshot. 
 Now we are going to dive into the actual installation process of Arch Linux on our system. By now you should be on a command line interface and the system should be waiting for you to start entering the commands. First of all let's clear the screen to not be disturbed by all the pre-existing text, for this press "Ctrl + L", this will clear the terminal anytime of all the text. Now follow each command precisely to not face any difficulties during the installation.
 </div>
 
-### Connecting To Internet
+### Connect To Internet
 <div style="text-align: justify">
 We will need to install alot of pakages for our Arch Linux so we will need an internet connection. Let's check if we have one already by typing in our first command:
 </div>
