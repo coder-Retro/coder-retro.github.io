@@ -1,7 +1,8 @@
 /* Home Page Profile Picture Settings */
 img.mb-2.h-36.w-36.rounded-full {
     box-sizing: border-box;
-    border: 4px solid #ffffff;
+    border: 4px solid #00ffff;
+    box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.4);
     padding: 4px;
     object-fit: cover;
     transform: none;
