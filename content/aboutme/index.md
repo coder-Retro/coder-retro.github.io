@@ -24,7 +24,7 @@ Through the course of my journey in tech, I have gotten my hand on some neat pro
     <li>HTML/CSS</li>
     <li>Graphic Design</li>
 </ul>
-I think judging by all of this till now you might already be able to tell that most of the time, I will be seen around my laptop, and aroung my friends as well, which are also explorers like me. Yup, that's my entire circle.
+I think judging by all of this till now you might already be able to tell that most of the time, I will be seen around my laptop, and around my friends as well, which are also explorers like me. Yup, that's my entire circle.
 </div>
 
 ## Miscellaneous
