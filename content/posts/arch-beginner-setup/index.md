@@ -71,7 +71,7 @@ Now look for another setting called "Secure Boot", it will also be located in th
 <div style="text-align: justify">
 Now the final step before our Arch USB can be booted, we need to turn off "Raid", if "Raid" is enabled then sometimes the Arch USB will not be able to detect our Hard Drive at the time of disk configuration. Just like the "Secure Boot", the "Raid" option will also be located in your boot options. Upon finding it, turn of "Raid" and turn on "AHCI". After doing all this, we are ready to boot into our USB. Now confirm your changes and exit the bios, your system will automatically restart and if you have followed along with me correctly upto this point, you will be greeted by arch install USB as your bootable option as shown here:
 <img src="img/ArchBootup.png" alt="Arch Bootup" width=600 style="border-radius: 5px">
-Use your arrow keys to select the first option as shown in the this screenshot. Hit enter and wait for the system to boot into the Arch USB.
+Use your arrow keys to select the first option as shown in this screenshot. Hit enter and wait for the system to boot into the Arch USB.
 </div>
 
 ## Arch Installation
