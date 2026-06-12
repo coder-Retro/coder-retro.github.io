@@ -11,15 +11,16 @@ Hello There! and welcome to my blog about learning git and github as a beginner.
 
 ## Introduction To Git
 <div style="text-align: justify">
-As said before, git is a version control system for your project. But what does a version control system even mean ? A version control system is a system that allows you to track all the changes made in your project's files by keeping a log of its history. You can view this history any time using git commands. This also allows you to jump back to any older version of your project where you had not applied the latest changes. Think of it as a safe system that allows you to manage your project in such a way that if anything goes wrong and your project starts to look like as if it is becoming a mess, you can just go back to a checkpoint where it was not a mess. Great thing isn't it ? Not to mention that git does all of this locally on your system meaning that the absence of an internet connection won't hinder your workflow at all, a developer's dream.
+As said before, git is a version control system for your project. But what does a version control system even mean ? A version control system is a system that allows you to track all the changes made in your project's files by keeping a log of its history. You can view this history any time using git commands. This also allows you to jump back to any older version of your project where you had not applied the latest changes.
+<img src="img/gitLogo.png" alt="Git Logo Image" width=600 style="border-radius: 5px">
 </div>
 
-### Installation Guide
+### Benefits Of Using Git
 <div style="text-align: justify">
-
+Think of git as a safe system that allows you to manage your project in such a way that if anything goes wrong and your project starts to look like as if it is becoming a mess, you can just go back to a checkpoint where it was not a mess. Great thing isn't it ? Not to mention that git does all of this locally on your system meaning that the absence of an internet connection won't hinder your workflow at all, a developer's dream.
 </div>
 
-### Git Terminologies
+### Git Installation
 <div style="text-align: justify">
-
+With that out of the way, let's start with how to setup git in our system. This is gonna be an easy process dont worry and just follow along step by step slowly.
 </div>
