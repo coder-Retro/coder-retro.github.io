@@ -25,19 +25,15 @@ Think of git as a safe system that allows you to manage your project in such a w
 With that out of the way, let's start with how to setup git in our system. This is gonna be an easy process dont worry and just follow along step by step slowly. First of all we need to download git, we can do this by going to git's official download site at "<a target="_blank" href="https://git-scm.com/install/windows">Git Download Site</a>". You will see a page that looks like this.
 <img src="img/GitDownloadSite.png" alt="Git Download Site" width=600 style="border-radius: 5px">
 Now if you are installing git on windows, you can download any of these setups and follow the on-screen instructions to install git on windows, you dont really need to change any configurations while running the setup, just keep pressing next until it starts the installation. Now if are installing git on Mac OS or a Debian Based Linux Distro, you can go to the Mac or Linux Tab and follow the given commands to install git. However, I am running Arch Linux and the git site doesn't provide the respective installation process so I will tell you how to do it on Arch as well. Dont worry, all you need is a single teminal command:
-</div>
 
 ```bash
 sudo pacman -S git
 ```
-<div style="text-align: justify">
 After this, you can also verify the git installation using the following command:
-</div>
 
 ```bash
 git --version
 ```
-<div style="text-align: justify">
 This command will show your installed version of git, this shows that git has been properly installed in your system and you are ready to move on with it. Now that we are done with installation of git, let's start with orientaion of github aswell to learn these tools in parallel and get the best out of them.
 </div>
 
@@ -63,5 +59,94 @@ Since I already have a google account, I will login using that account and then 
 <div style="text-align: justify">
 When you sign in your github's interface might look quite empty as compared to mine. That is because your account is new and your haven't added much to it yet where as mine has been in use for quite a while now. Anyways, let's familiarize with github's GUI. Here is an image of my github's home page.
 <img src="img/githubGUI.png" alt="Github Interface" width=600 style="border-radius: 5px">
-If you take a loot at that list on the left side of my github's home page, these are my remote repositories that are managed by github. Even this blogsite that you are looking at right now, its code is being maintained using git and github, as you can see by looking at the bottom-most repo.
+If you take a loot at that list on the left side of my github's home page, these are my remote repositories that are managed by github. Even this blogsite that you are looking at right now, its code is being maintained using git and github, as you can see by looking at the bottom-most repo. So any repos that you will make are going to appear in this column later on. Then there is the "News/Updates" Section in the middle of the page which shows the latest updates of any activity on github. That should be all for the home interface for now. Let's configuring git.
+</div>
+
+## Git Configuration
+<div style="text-align: justify">
+When we are about to use git for the first time after installation, there are some one time commands that we need to run in order to configure git. First we need to tell it about the account that it will be handling on github remotely.
+</div>
+
+### Username & Email
+<div style="text-align: justify">
+For this, we need to provide it with the username and email of that account. Now my name is coder-Retro and email is hasnainqadri9c@gmail.com, but you shall replace my credentials with yours. Username and email are configured as:
+
+```bash
+git config --global user.name "coder-Retro"
+git config --global user.email "hasnainqadri9c@gmail.com"
+```
+</div>
+
+### Verification
+<div style="text-align: justify">
+Then you can also verify your configuration using the following git command:
+
+```bash
+git config --list
+```
+This will show the current configurred username and email that git is handling. After this one-time setup is done, let's create our first Local Repo using git.
+</div>
+
+## Repository Setup
+<div style="text-align: justify">
+In order to make a local repo, we need to make a folder on our system. Name this folder as your project's name for easy management and organization. For example if our porject is called Demo, then make a folder by the name "Demo". You can do this using command line by running the following command:
+
+```bash
+mkdir Demo
+```
+Then we need to enter this folder, you can do this by running the command:
+
+```bash
+cd Demo
+```
+</div>
+
+### Local Repo
+<div style="text-align: justify">
+By now, we are inside our project folder, now we need to turn this folder into a local repo using git. We can use git's repo initializing command for this purpose, this command is the most basic git command and it goes like this:
+
+```bash
+git init
+git branch -M main
+```
+What this does is that it turns the current folder into a local repo and the second command renames your current branch to "main", we will learn what a branch is when we get there, for now just let is slide and dont sweat it. Git starts tracking changes that occur to any files in this folder (Local Repo) from now on. Hence, git is active and in action now.
+</div>
+
+### Remote Repo
+<div style="text-align: justify">
+After this we need to make a remote repo using github which we will then connect this local repo to. In order to create a remote repo, go to your github's home page and look for the "plus icon with a dropdown menu" in the navigation bar. Click the dropdown arrow and you will see the following options in the list that appears:
+<img src="img/newRepo.png" alt="New Repo Option" width=600 style="border-radius: 5px">
+Select the "New repository" option. You will be greeted with repo creation page, name your remote repo same as your local repo for easy management. Since my local repo was named Demo, I will name remote as Demo too.
+<img src="img/repoConfig.png" alt="New Repo Option" width=600 style="border-radius: 5px">
+For now, dont change any other settings and just click on "Create repository" button at the bottom right. Now you will be greeted with a new page that contains our repo's HTTPS token which we need to copy. We need this to connect our local repo to remote repo. Copy the token by clicking at the following button:
+<img src="img/repoToken.png" alt="Repo Token" width=600 style="border-radius: 5px">
+Now we can go back to connect our local repo to remote repo using terminal.
+</div>
+
+### Connect Local to Remote
+<div style="text-align: justify">
+In order to connect our local repo to remote repo, run the following command but replace my repos HTTPS token with your repo's:
+
+```bash
+git remote add origin https://github.com/coder-Retro/Demo.git
+```
+This command connects our local repo to the remote repo and allows the communication between both of them from now on, we can tranfer data from local to remote and vice versa now. Congratulations on making your first repository. Next up, we will learn how to add contents to our repos.
+</div>
+
+## Add Files to Local Repo
+<div style="text-align: justify">
+Let's create a simple cpp file in our local repo and then try to save it to our remote repo as well. Let's creat a simple test.cpp in our local repo:
+
+```cpp
+#include<iostream>
+int main(){
+    std::cout << "This is my Demo Project";
+    return 0;
+}
+```
+Now save this file in your local repo. Lets see if git is tracking our file or not. For this, run the command:
+
+```bash
+git status
+```
 </div>
