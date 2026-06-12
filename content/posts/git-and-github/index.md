@@ -1,6 +1,6 @@
 ---
 draft: false
-title: 'Git & Github Guide'
+title: 'Git & Github Pro Guide'
 date: 2026-06-12
 ---
 
@@ -109,7 +109,7 @@ By now, we are inside our project folder, now we need to turn this folder into a
 git init
 git branch -M main
 ```
-What this does is that it turns the current folder into a local repo and the second command renames your current branch to "main", we will learn what a branch is when we get there, for now just let is slide and dont sweat it. Git starts tracking changes that occur to any files in this folder (Local Repo) from now on. Hence, git is active and in action now.
+What this does is that it turns the current folder into a local repo and the second command renames your current branch to "main", we will learn what a branch is when we get there, for now just let is slide and dont sweat it. Git starts monitoring any files in this folder (Local Repo) from now on. Hence, git is active and in action now.
 </div>
 
 ### Remote Repo
@@ -133,7 +133,7 @@ git remote add origin https://github.com/coder-Retro/Demo.git
 This command connects our local repo to the remote repo and allows the communication between both of them from now on, we can tranfer data from local to remote and vice versa now. Congratulations on making your first repository. Next up, we will learn how to add contents to our repos.
 </div>
 
-## Add Files to Local Repo
+### Add Files to Local Repo
 <div style="text-align: justify">
 Let's create a simple cpp file in our local repo and then try to save it to our remote repo as well. Let's creat a simple test.cpp in our local repo:
 
@@ -149,4 +149,51 @@ Now save this file in your local repo. Lets see if git is tracking our file or n
 ```bash
 git status
 ```
+You will see the following on your teminal:
+
+```bash
+On branch main
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vscode/
+        test.cpp
+
+nothing added to commit but untracked files present
+(use "git add" to track)
+```
+This means that git is not tracking your test.cpp yet, in order to make git track it, run the following command:
+
+```bash
+git add test.cpp
+```
+Now run the status command again and you will see this now:
+
+```bash
+On branch main
+No commits yet
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test.cpp
+```
+This means that git has started tracking your test.cpp.
+</div>
+
+### Add Files to Remote Repo
+<div style="text-align: justify">
+Now let's save this file onto our remote repo as well using the following two commands:
+
+```bash
+git commit -m "Any Message"
+git push origin main
+```
+The first command create a snap shot of your current added file. Then the second command sends that snap shot to the main branch in your remote repo. Now if you go back to you github and open the Demo repo and refresh the page. You will see that your test.cpp has appeared in remote repo. Your will also see the text "Any Message" in front of it, this is called a commit message and people use it to determine what change they performed in the pushed file.
+<img src="img/firstCommit.png" alt="First Commit" width=600 style="border-radius: 5px">
+Just now, we pushed our code directly to main branch in the repo, for now it's ok since we are learning git and gitgub as beginners but later on we will learn how it is not recommended to push directly to main branch. In order to understand this, we need to learn what branches are and how to use them. But before moving on to that, I recommend taking a break and practicing all that you have learnt up until now to let it sink in. When you have had a good grasp on it, contiue to branches.
+</div>
+
+## Working Tree & Branches
+<div style="text-align: justify">
+
 </div>
