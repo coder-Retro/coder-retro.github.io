@@ -203,7 +203,7 @@ git push origin main
 The first command create a snap shot of your current added file. Then the second command sends that snap shot to the main branch in your remote repo.
 </div>
 
-#### GitHub Authentication
+#### Github Authentication
 <div style="text-align: justify">
 When you run git push origin main for the first time, your terminal will prompt you for a Username and Password. Do not enter your standard GitHub account password! Since 2021, GitHub requires a Personal Access Token (PAT) for command-line operations. Here is how to fix this. Go to your github settings:
 <ol>
@@ -376,7 +376,7 @@ git switch main
 git branch -d feature-branch
 git push origin -d feature-branch
 ```
-The first command will switch us to main because in order to delete a branch, we need to move to another branch as git does not allow you to delete your currently active branch. So first command will switch us to main. Then second command will delete our feature branch in our local repo. And finally third command will delete our feature branch from our remote repo on github. You can verify the deletion of or local repo's feature branch by running the command:
+The first command will switch us to main because in order to delete a branch, we need to move to another branch as git does not allow you to delete your currently active branch. So first command will switch us to main. Then second command will delete our feature branch in our local repo. And finally third command will delete our feature branch from our remote repo on github. You can verify the deletion of your local repo's feature branch by running:
 
 ```bash
 git branch
@@ -384,3 +384,6 @@ git branch
 You will see that your feature branch is deleted in your local repo. Similarly you can verify the deletion of your remote feature branch by going to the branch switch menu of your repo on github:
 </div>
 <img src="img/featureDeleted.png" alt="feature branch deleted" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Congratulations! you have learnt how to create a feature branch, add a feature to your project, merge you branch using either git commands on your personal solo repo and by opening a PR on a collaborative repo. Then you also learnt how to delete your feature branch. Now you should take a break and practive all these concepts to let them sink in. Then we will move onto our next topic which is gonna be "Commit Tracking", basically the version control part.
+</div>
