@@ -128,7 +128,7 @@ Select the "New repository" option. You will be greeted with repo creation page,
 </div>
 <img src="img/repoConfig.png" alt="New Repo Option" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
-For now, dont change any other settings and just click on "Create repository" button at the bottom right. Now you will be greeted with a new page that contains our repo's HTTPS token which we need to copy. We need this to connect our local repo to remote repo. Copy the token by clicking at the following button:
+For now, dont change any other settings and just click on "Create repository" button at the bottom right. Now you will be greeted with a new page that contains our repo's HTTPS URL which we need to copy. We need this to connect our local repo to remote repo. Copy the URL by clicking at the following button:
 </div>
 <img src="img/repoToken.png" alt="Repo Token" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
@@ -137,7 +137,7 @@ Now we can go back to connect our local repo to remote repo using terminal.
 
 ### Connect Local to Remote
 <div style="text-align: justify">
-In order to connect our local repo to remote repo, run the following command but replace my repos HTTPS token with your repo's:
+In order to connect our local repo to remote repo, run the following command but replace my repos HTTPS URL with your repo's:
 
 ```bash
 git remote add origin https://github.com/coder-Retro/Demo.git
@@ -200,7 +200,28 @@ Now let's save this file onto our remote repo as well using the following two co
 git commit -m "Any Message"
 git push origin main
 ```
-The first command create a snap shot of your current added file. Then the second command sends that snap shot to the main branch in your remote repo. Now if you go back to you github and open the Demo repo and refresh the page. You will see that your test.cpp has appeared in remote repo. Your will also see the text "Any Message" in front of it, this is called a commit message and people use it to determine what change they performed in the pushed file.
+The first command create a snap shot of your current added file. Then the second command sends that snap shot to the main branch in your remote repo.
+</div>
+
+#### GitHub Authentication
+<div style="text-align: justify">
+When you run git push origin main for the first time, your terminal will prompt you for a Username and Password. Do not enter your standard GitHub account password! Since 2021, GitHub requires a Personal Access Token (PAT) for command-line operations. Here is how to fix this. Go to your github settings:
+<ol>
+<li>Go to Developer settings</li>
+<li>Go to Personal access tokens</li>
+<li>Go to Tokens (classic)</li>
+<li>Click "Generate new token (classic)</li>
+<li>Give it a name (e.g., "GitCLI"), and check the repo box.</li>
+<li>Click "Generate token" and copy it immediately</li>
+<li>Note: You won't be able to see it again!</li>
+<li>Enter this token when your terminal asks for your "Password."</li>
+</ol>
+After you are done with this procedure, run this command again.
+
+```bash
+git push origin main
+```
+Now if you go back to you github and open the Demo repo and refresh the page. You will see that your test.cpp has appeared in remote repo. Your will also see the text "Any Message" in front of it, this is called a commit message and people use it to determine what change they performed in the pushed file.
 </div>
 <img src="img/firstCommit.png" alt="First Commit" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
@@ -208,6 +229,127 @@ Just now, we pushed our code directly to main branch in the repo, for now it's o
 </div>
 
 ## Working Tree & Branches
+<div style="text-align: justify">
+When we are working on git and github, we need to know how it is structured and handled inside our repo, basically our entire project is organized similar to a tree structure and you can say the the branch that we just pushed our test.cpp to, yes the "main branch" is the trunk of this tree. Our main branch holds the deployed version of our project which means that all the code on our main branch, is deployed in the field. Then how do we add new features to it? How do we maintain the features without compromising the main deployed code? How do we test and experiment with new feature without ruining our actual project? That is where feature branches come in. A feature branch is basically a branch that diverges out of the main branch, we use this branch to create a separate copy of our project and work on that copy so that we dont modify the actual project on the main branch. When our modifications are completed and we have tested the new feature, we merge our feature branch back into our main branch to apply these new features to the deployed project. This entire branch structure is called a "Working Tree".
+</div>
+<img src="img/workingTree.png" alt="Working Tree Image" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+So basically when you are working on your project, it is preferred to make a feature branch and work on that so that your main project remains safe. And this is why it is not recommended to push directly onto the main branch as we did before. Now that we have learnt what a branch is, let's try to make one and then we will use that branch to add some more features to our test.cpp.
+</div>
+
+### Feature Branch
+<div style="text-align: justify">
+Before making our feature branch, it is a convention that we must sync our local repo to our remote repo. We can do this by running the following command in our terminal:
+
+```bash
+git checkout main
+git pull origin main
+```
+The first command makes sure that we are on our main branch. If you are already on the main branch, you can skip this command. Then the second command fetches the files from remote repo onto our local repo to make sure that our local repo has the latest updates before we start working on anything. First we need a name for our feature branch, for now we will name if "feature-branch". Now let's make our feature branch by running this command:
+
+```bash
+git switch -c feature-branch
+```
+This command not only make a new feature branch but also takes us to it. You can also check which branches your have in your repo and your currently active branch by running this command:
+
+```bash
+git branch
+```
+Your will see the list of all current branches on your repo and your currently active branch will be marked with a "*" symbol. My Demo Repo's branch list look like this right now:
+
+```bash
+* feature-branch
+  main
+```
+The "*" symbol shows that I am currently working on the feature branch, you can switch between branches using any of the following two commands:
+
+```bash
+git checkout targetBranchName
+git switch targetBranchName
+```
+Now anything we do on this feature branch will not modify the main branch itself. Let's verify this by editing the test.cpp on this feature branch. Open your test.cpp and add a line in the main function after the last cout:
+
+```cpp
+#include<iostream>
+int main(){
+    std::cout << "This is my Demo Project";
+    std::cout << "\nThis is a Feature";
+    return 0;
+}
+```
+Save your file and then add, commit and push it to your feature branch using the previously learnt commands:
+
+```bash
+git add test.cpp
+git commit -m "feat: Added Feature"
+git push origin feature-branch
+```
+Now go to your github and open your test.cpp, your will see something like:
+</div>
+<img src="img/mainBranch.png" alt="main branch" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+As you can see, the code hasn't changed. This is because we pushed the code to feature branch this time and not the main branch. Let's look at the code in our feature branch to see if our changes are showing there. You can do this by opening the branch drop down menu and selecting feature branch as shown:
+</div>
+<img src="img/branchSwitch.png" alt="Branch Switch" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+This will take you to your feature branch and now you can see the updated feature code that you have pushed to your feature branch. It should look something like this:
+</div>
+<img src="img/featureBranch.png" alt="feature branch" width=600 style="border-radius: 10px">
+
+### Merge Feature Branch
+<div style="text-align: justify">
+So now, we know how to update our local repo to remote repo, make a feature branch and switch to it, modify file on the feature branch and push it to feature branch, how to view our feature branch on github. All while not disturbing the main branch. Now let's say that our feature is working perfectly fine and we know that it is ready to be deployed. Then we need to merge our feature branch back into main branch. There are two ways you can do this:
+<ul>
+<li>Through Command Line using git</li>
+<li>Creating Pull Request using github</li>
+</ul>
+</div>
+
+#### Git Method
+<div style="text-align: justify">
+If you are working on your project as a solo developer in your personal repository than git method is the most suitable for this scenario. For this, you need to first switch to your main branch and then run the merge command as:
+
+```bash
+git switch main
+git merge feature-branch
+git push origin main
+```
+The first command switches control to your main branch in local repo, the second command merges the updated files from your feature branch into your main branch in local repo, then the third command updates your remote repo's main branch with these modifications as well. You can verify these change by going onto your github and checking the file in main branch to see updates.
+</div>
+
+#### Github Method
+<div style="text-align: justify">
+If your are working on a project with a team in a collaborative repository, it's preferred to use the github method which requires you to generate a "PR", which stands for "Pull Request". It is basically a sort of letter that carries your updated file from you feature branch attached with it. Your team first reads your file to make sure that it doesn't require any changes to be made before it goes into the main branch for merge. When you are provided a certains number of approvals by your team, then you are allowed to merge your feature branch back into main branch. This makes sure that one individual doesnt mistakenly alter the main branch without the approval of the team. Let's learn how to generate a PR now after pushing to our remote repo's feature branch. First, go to your remote repo on github. Your will see an option to "Compare and Create Pull Request" that came when you pushed to remote's feature branch. However if you dont see this option, simply click on "Pull Requests" as shown here:
+</div>
+<img src="img/pullReq.png" alt="Pull Request" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Then your will come to "PR section", from here you can generate your PR using the "New Pull Request" button at the top right of this section as shown in here.
+</div>
+<img src="img/newPR.png" alt="New Pull Request" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+You will be greeted with the file that you are about to send along with your PR to be merged into the main, review the file and make sure that it is as you intended it to be, like my file has my added feature line in it as shown here:
+</div>
+<img src="img/createPR.png" alt="New Pull Request" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Then click on the "Create Pull Request" button at the top right of this section and you will be taken to the final configuration for your PR. Here you will select a title (first hightlight), then provide a description (second highlight) and finally click on "Create Pull Request" (third highlight) at the bottom of this page. This will finalise and submit your PR for your team to review before you can merge.
+</div>
+<img src="img/prSetup.png" alt="New Pull Request" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Now go back to "Pull Requests" tab and you will see your PR waiting there, click it to open it and check the current status of our PR. If you are working with an actual team in a collaborative Repo, you will see something like this in your PR:
+</div>
+<img src="img/mergeBlock.png" alt="Merge Block" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Merging will be blocked until a specified number of people from your team have approved your PR. For now, this is my own repo so I have set the number of required approvals to 1 and then I asked one of my amazing friends to volunteer as a reviewer for my PR. So I invited my friend "Velanora" as a collaborator in my Demo Repo. Let's add her as a reviewer on this PR so she can review and approve it for us which will allow us to merge our feature branch into main branch then. We can add her as a reviewer by selecting her from the "Reviewer's Menu" like this:
+</div>
+<img src="img/reviewerMenu.png" alt="Reviewer Menu" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+After we select a reviewer by clicking on them, we can save them by clicking outside the reviewer's menu. Our Reviewer will receive a notification from github telling them about their required approval in our PR. Then we will have to wait for them to review our PR. We can see that our reviewer has approved our PR or not by a symbol next to their name in Reviwer list on the right side. If the symbol is a yellow dot, they have not approved our PR, if the symbol is a blue tick, they have approved the PR.
+</div>
+<img src="img/pendingApproval.png" alt="Pending Approval" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+After reviewing, our reviewer can either request changes or they can approve it depending on the requirement of the project. If they request changes, we will still be barred from merging then, but if they approve our PR, we will be allowed to merge. Once our PR has gotten the required amount of approvals, we can go back to our PR and we will see that our merge option has been unlocked. If everything has gone accordingly, our PR should have an unlocked merge option like this:
+</div>
+<img src="img/mergeUnlocked.png" alt="Merge Unlocked" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
 
 </div>
