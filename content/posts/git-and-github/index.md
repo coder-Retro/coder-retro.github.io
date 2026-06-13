@@ -347,6 +347,40 @@ After we select a reviewer by clicking on them, we can save them by clicking out
 </div>
 <img src="img/pendingApproval.png" alt="Pending Approval" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
-After reviewing, our reviewer can either request changes or they can approve it depending on the requirement of the project. If they request changes, we will still be barred from merging then, but if they approve our PR, we will be allowed to merge. Once our PR has gotten the required amount of approvals, we can go back to our PR and we will see that our merge option has been unlocked. If everything has gone accordingly, our PR should have an unlocked merge option like this:
+After reviewing, our reviewer can either request changes or they can approve it depending on the requirement of the project. If they request changes, we will still be barred from merging then, but if they approve our PR, yellow dot will be replaced with a blue tick and we will be allowed to merge.
+</div>
+<img src="img/prApproved.png" alt="Approved PR" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Once our PR has gotten the required amount of approvals, we can go back to our PR and we will see that our merge option has been unlocked. If everything has gone accordingly, our PR should have an unlocked merge option like this:
 </div>
 <img src="img/mergeUnlocked.png" alt="Merge Unlocked" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Now let's merge our PR by clicking on the "Merger Pull Request" button at the bottom, a dialogue box will appear where we have to provide a commit message, a description if we want and finally click the "Merge Pull Request" button like this one:
+</div>
+<img src="img/mergePR.png" alt="Merge Pull Request" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Then finally our PR will be merged into main and you will see this appear at the bottom of your PR:
+</div>
+<img src="img/prMerged.png" alt="Merge Pull Request" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Now it is a convention to delete a branch after it has merged into main and completed the task it was supposed to do, but before deleting it let's see that our changes have safely merged into our main branch by going to main branch on github.
+</div>
+<img src="img/updatedMain.png" alt="Main Updated" width=600 style="border-radius: 10px">
+
+### Delete Feature Branch
+<div style="text-align: justify">
+As we can see that our main has successfully been updated and now we can safely delete our feature branch using the command line in our terminal. We will need the following commands:
+
+```bash
+git switch main
+git branch -d feature-branch
+git push origin -d feature-branch
+```
+The first command will switch us to main because in order to delete a branch, we need to move to another branch as git does not allow you to delete your currently active branch. So first command will switch us to main. Then second command will delete our feature branch in our local repo. And finally third command will delete our feature branch from our remote repo on github. You can verify the deletion of or local repo's feature branch by running the command:
+
+```bash
+git branch
+```
+You will see that your feature branch is deleted in your local repo. Similarly you can verify the deletion of your remote feature branch by going to the branch switch menu of your repo on github:
+</div>
+<img src="img/featureDeleted.png" alt="feature branch deleted" width=600 style="border-radius: 10px">
