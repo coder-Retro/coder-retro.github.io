@@ -374,7 +374,7 @@ As we can see that our main has successfully been updated and now we can safely 
 ```bash
 git switch main
 git branch -d feature-branch
-git push origin -d feature-branch
+git push origin --delete feature-branch
 ```
 The first command will switch us to main because in order to delete a branch, we need to move to another branch as git does not allow you to delete your currently active branch. So first command will switch us to main. Then second command will delete our feature branch in our local repo. And finally third command will delete our feature branch from our remote repo on github. You can verify the deletion of your local repo's feature branch by running:
 
@@ -385,5 +385,5 @@ You will see that your feature branch is deleted in your local repo. Similarly y
 </div>
 <img src="img/featureDeleted.png" alt="feature branch deleted" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
-Congratulations! you have learnt how to create a feature branch, add a feature to your project, merge you branch using either git commands on your personal solo repo and by opening a PR on a collaborative repo. Then you also learnt how to delete your feature branch. Now you should take a break and practive all these concepts to let them sink in. Then we will move onto our next topic which is gonna be "Commit Tracking", basically the version control part.
+Congratulations! you have learnt how to create a feature branch, add a feature to your project, merge your branch using either git commands on your personal solo repo and by opening a PR on a collaborative repo. Then you also learnt how to delete your feature branch. Now you should take a break and practice all these concepts to let them sink in. Then we will move onto our next topic which is gonna be "Commit Tracking", basically the version control part.
 </div>
