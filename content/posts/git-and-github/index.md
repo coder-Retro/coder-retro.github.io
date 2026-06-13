@@ -350,6 +350,3 @@ After we select a reviewer by clicking on them, we can save them by clicking out
 After reviewing, our reviewer can either request changes or they can approve it depending on the requirement of the project. If they request changes, we will still be barred from merging then, but if they approve our PR, we will be allowed to merge. Once our PR has gotten the required amount of approvals, we can go back to our PR and we will see that our merge option has been unlocked. If everything has gone accordingly, our PR should have an unlocked merge option like this:
 </div>
 <img src="img/mergeUnlocked.png" alt="Merge Unlocked" width=600 style="border-radius: 10px">
-<div style="text-align: justify">
-
-</div>
