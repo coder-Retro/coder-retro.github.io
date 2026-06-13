@@ -373,10 +373,11 @@ As we can see that our main has successfully been updated and now we can safely 
 
 ```bash
 git switch main
+git pull origin main
 git branch -d feature-branch
 git push origin --delete feature-branch
 ```
-The first command will switch us to main because in order to delete a branch, we need to move to another branch as git does not allow you to delete your currently active branch. So first command will switch us to main. Then second command will delete our feature branch in our local repo. And finally third command will delete our feature branch from our remote repo on github. You can verify the deletion of your local repo's feature branch by running:
+The first command will switch us to main because in order to delete a branch, we need to move to another branch as git does not allow you to delete your currently active branch. So first command will switch us to main.Then second command will update your local's main to remote's main (updated after merge). Then third command will delete our feature branch in our local repo. And finally fourth command will delete our feature branch from our remote repo on github. You can verify the deletion of your local repo's feature branch by running:
 
 ```bash
 git branch
