@@ -20,9 +20,9 @@ So in order to install arch linux, we need three main components to begin:
 So first let's download the arch linux iso from its official site
 "<a target="_blank" href="https://archlinux.org/download/">Arch Linux Site</a>"
 Go to this site and scroll down to the download links section. There will be alot of options for servers to download from, servers section should look like this:
-<img src="img/DownloadServers.png" alt="Download Servers" width=600 style="border-radius: 5px">
+<img src="img/DownloadServers.png" alt="Download Servers" width=600 style="border-radius: 10px">
 I have provided a small screenshot but this list will be quiet long in reality. Now select the closest server to you for the best download speed. You will be shown a screen with several download links of Arch Linux, click the iso link as shown:
-<img src="img/IsoLink.png" alt="Iso Link" width=600 style="border-radius: 5px">
+<img src="img/IsoLink.png" alt="Iso Link" width=600 style="border-radius: 10px">
 After this, your Arch iso will start downloading, now let's go on to rufus.
 </div>
 
@@ -30,7 +30,7 @@ After this, your Arch iso will start downloading, now let's go on to rufus.
 <div style="text-align: justify">
 Rufus is a software used for creating a bootable USB, which we need to install arch from. Now in order to download rufus, let's go to the official rufus site
 "<a target="_blank" href="https://rufus.ie/en/">Rufus Site</a>". Then scroll down to the download section and select any of the executables:
-<img src="img/RufusDownloadLinks.png" alt="Rufus Download Links" width=600 style="border-radius: 5px">
+<img src="img/RufusDownloadLinks.png" alt="Rufus Download Links" width=600 style="border-radius: 10px">
 After this, rufus will start downloading in your system.
 </div>
 
@@ -42,7 +42,7 @@ After downloading the Arch iso and rufus, it's time to create a bootable USB. So
 ### Rufus Setup
 <div style="text-align: justify">
 Rufus will open a new window asking to fill the parameters for creating the bootable USB for your system, it will require fields such as the USB you want to work on and the iso you want to use. So select your plugged USB drive. Then for the second field which says (Boot selection), click on the select button on the right and look for the arch iso you downloaded previously. Select the arch iso and confirm it. After these two, you will be left with Partition Scheme  and Target System, select GPT for partition scheme and UEFI for target system. Now go to the Volume label field and give your USB a name like "ArchInstallationUSB". Leave the remaining options as it is. By the end of this whole setting process, your rufus should look a bit like this:
-<img src="img/RufusParameters.png" alt="Rufus Parameters" width=450 style="border-radius: 5px">
+<img src="img/RufusParameters.png" alt="Rufus Parameters" width=450 style="border-radius: 10px">
 Your Device (USB) might be different than mine so it's ok if your selection appears a bit different. After doing all this, click start button on the bottom to start creating bootable USB. Now wait as this process will take a few minutes. When it says "Ready", congratulations! your bootable USB is ready to go.
 </div>
 
@@ -70,7 +70,7 @@ Now look for another setting called "Secure Boot", it will also be located in th
 ### Turn Off Raid
 <div style="text-align: justify">
 Now the final step before our Arch USB can be booted, we need to turn off "Raid", if "Raid" is enabled then sometimes the Arch USB will not be able to detect our Hard Drive at the time of disk configuration. Just like the "Secure Boot", the "Raid" option will also be located in your boot options. Upon finding it, turn of "Raid" and turn on "AHCI". After doing all this, we are ready to boot into our USB. Now confirm your changes and exit the bios, your system will automatically restart and if you have followed along with me correctly upto this point, you will be greeted by arch install USB as your bootable option as shown here:
-<img src="img/ArchBootup.png" alt="Arch Bootup" width=600 style="border-radius: 5px">
+<img src="img/ArchBootup.png" alt="Arch Bootup" width=600 style="border-radius: 10px">
 Use your arrow keys to select the first option as shown in this screenshot. Hit enter and wait for the system to boot into the Arch USB.
 </div>
 
@@ -180,7 +180,7 @@ lsblk
 
 <div style="text-align: justify">
 It should look something like:
-<img src="img/PartitionsList.png" alt="Partitions List" width=600 style="border-radius: 5px">
+<img src="img/PartitionsList.png" alt="Partitions List" width=600 style="border-radius: 10px">
 Now from this list, identify your Drive that you need to install Arch on by looking at its size, and check its label, mine is "sda". So I will now need to format "sda". Your list might look totally different if you were previously running a difference OS. Either way, let's start formatting this drive. Type in the command to start the formatting process, (replace sda with your own disk):
 </div>
 
@@ -220,7 +220,7 @@ archinstall
 ### System Configuration
 <div style="text-align: justify">
 After running the "archinstall" command, you should now be on the system configuration menu of the Arch installer. Let's start configuring our installer.
-<img src="img/ArchInstallMenu.png" alt="Arch Install Menu" width=600 style="border-radius: 5px">
+<img src="img/ArchInstallMenu.png" alt="Arch Install Menu" width=600 style="border-radius: 10px">
 First setting will be the "Language", set it to your preferred language.
 
 Then leave the "Mirrors" untouched. "Locales" is used to setup your keyboard layouts and by default it will be US keyboard so I will leave it at that, you can change it if you want to.
@@ -289,6 +289,6 @@ shutdown now
 
 <div style="text-align: justify">
 Now unplug the USB and start your system. If the system fails to load your Hard Drive, just go into bios again and edit the boot sequence to make sure that the Hard Drive is at the top of list, then apply and exit to boot into your Drive. You will be greeted with the grub bootloader menu:
-<img src="img/GrubMenu.png" alt="Grub Menu" width=600 style="border-radius: 5px">
+<img src="img/GrubMenu.png" alt="Grub Menu" width=600 style="border-radius: 10px">
 Select "Arch Linux" and hit enter. You should now be on the login screen, enter your user account password that you had setup during the system configuration to login. Welcome to the Desktop, you have successfully installed Arch Linux in your system. You can open the terminal by pressing "Ctrl+Alt+T", have fun learning the Arch commands now. Thank you for reading my blog, hope it helped. I am retro and this has been a beautiful journey, Sayonara!
 </div>

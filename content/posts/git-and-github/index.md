@@ -13,7 +13,7 @@ Hello There! and welcome to my blog about learning git and github as a beginner.
 <div style="text-align: justify">
 As said before, git is a version control system for your project. But what does a version control system even mean ? A version control system is a system that allows you to track all the changes made in your project's files by keeping a log of its history. You can view this history any time using git commands. This also allows you to jump back to any older version of your project where you had not applied the latest changes.
 </div>
-<img src="img/gitLogo.png" alt="Git Logo Image" width=600 style="border-radius: 5px">
+<img src="img/gitLogo.png" alt="Git Logo Image" width=600 style="border-radius: 10px">
 
 ### Benefits Of Using Git
 <div style="text-align: justify">
@@ -24,7 +24,7 @@ Think of git as a safe system that allows you to manage your project in such a w
 <div style="text-align: justify">
 With that out of the way, let's start with how to setup git in our system. This is gonna be an easy process dont worry and just follow along step by step slowly. First of all we need to download git, we can do this by going to git's official download site at "<a target="_blank" href="https://git-scm.com/install/windows">Git Download Site</a>". You will see a page that looks like this.
 </div>
-<img src="img/GitDownloadSite.png" alt="Git Download Site" width=600 style="border-radius: 5px">
+<img src="img/GitDownloadSite.png" alt="Git Download Site" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
 Now if you are installing git on windows, you can download any of these setups and follow the on-screen instructions to install git on windows, you dont really need to change any configurations while running the setup, just keep pressing next until it starts the installation. Now if are installing git on Mac OS or a Debian Based Linux Distro, you can go to the Mac or Linux Tab and follow the given commands to install git. However, I am running Arch Linux and the git site doesn't provide the respective installation process so I will tell you how to do it on Arch as well. Dont worry, all you need is a single teminal command:
 
@@ -48,13 +48,13 @@ Github is basically a website that you can use in combination with git, this sit
 </ul>
 Ideally, you should keep both of these in sync so that your project stays updated and there are no gaps between you local data and remote data. Also, git and github manage your project using Repositories. Repository is just a fancy name for a folder in github terminology. In short, a repository is also called a "Repo". So you have a Local Repo and a Remote Repo.
 </div>
-<img src="img/githubLogo.png" alt="Github Logo" width=600 style="border-radius: 5px">
+<img src="img/githubLogo.png" alt="Github Logo" width=600 style="border-radius: 10px">
 
 ### Github Setup
 <div style="text-align: justify">
 Now that we have already installed git, let's setup our github so that we can get into learning them both. First you need to make an account on github by going to the official github site at "<a target="_blank" href="https://github.com">Github Site</a>". Now you can make a github account by entering your email and clicking "Sign up for Github" button, then you will need to verify your account using your email and the account will be created. Or if you already have a google account, you can use that to sign in aswell using the sign in option at the top right of this webpage as shown here.
 </div>
-<img src="img/githubSignIn.png" alt="Github Sign In" width=600 style="border-radius: 5px">
+<img src="img/githubSignIn.png" alt="Github Sign In" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
 Since I already have a google account, I will login using that account and then we will go through the github's understanding regarding its interface and all.
 </div>
@@ -63,7 +63,7 @@ Since I already have a google account, I will login using that account and then 
 <div style="text-align: justify">
 When you sign in your github's interface might look quite empty as compared to mine. That is because your account is new and your haven't added much to it yet where as mine has been in use for quite a while now. Anyways, let's familiarize with github's GUI. Here is an image of my github's home page.
 </div>
-<img src="img/githubGUI.png" alt="Github Interface" width=600 style="border-radius: 5px">
+<img src="img/githubGUI.png" alt="Github Interface" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
 If you take a loot at that list on the left side of my github's home page, these are my remote repositories that are managed by github. Even this blogsite that you are looking at right now, its code is being maintained using git and github, as you can see by looking at the bottom-most repo. So any repos that you will make are going to appear in this column later on. Then there is the "News/Updates" Section in the middle of the page which shows the latest updates of any activity on github. That should be all for the home interface for now. Let's configuring git.
 </div>
@@ -122,15 +122,15 @@ What this does is that it turns the current folder into a local repo and the sec
 <div style="text-align: justify">
 After this we need to make a remote repo using github which we will then connect this local repo to. In order to create a remote repo, go to your github's home page and look for the "plus icon with a dropdown menu" in the navigation bar. Click the dropdown arrow and you will see the following options in the list that appears:
 </div>
-<img src="img/newRepo.png" alt="New Repo Option" width=600 style="border-radius: 5px">
+<img src="img/newRepo.png" alt="New Repo Option" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
 Select the "New repository" option. You will be greeted with repo creation page, name your remote repo same as your local repo for easy management. Since my local repo was named Demo, I will name remote as Demo too.
 </div>
-<img src="img/repoConfig.png" alt="New Repo Option" width=600 style="border-radius: 5px">
+<img src="img/repoConfig.png" alt="New Repo Option" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
 For now, dont change any other settings and just click on "Create repository" button at the bottom right. Now you will be greeted with a new page that contains our repo's HTTPS token which we need to copy. We need this to connect our local repo to remote repo. Copy the token by clicking at the following button:
 </div>
-<img src="img/repoToken.png" alt="Repo Token" width=600 style="border-radius: 5px">
+<img src="img/repoToken.png" alt="Repo Token" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
 Now we can go back to connect our local repo to remote repo using terminal.
 </div>
@@ -202,9 +202,9 @@ git push origin main
 ```
 The first command create a snap shot of your current added file. Then the second command sends that snap shot to the main branch in your remote repo. Now if you go back to you github and open the Demo repo and refresh the page. You will see that your test.cpp has appeared in remote repo. Your will also see the text "Any Message" in front of it, this is called a commit message and people use it to determine what change they performed in the pushed file.
 </div>
-<img src="img/firstCommit.png" alt="First Commit" width=600 style="border-radius: 5px">
+<img src="img/firstCommit.png" alt="First Commit" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
-Just now, we pushed our code directly to main branch in the repo, for now it's ok since we are learning git and gitgub as beginners but later on we will learn how it is not recommended to push directly to main branch. In order to understand this, we need to learn what branches are and how to use them. But before moving on to that, I recommend taking a break and practicing all that you have learnt up until now to let it sink in. When you have had a good grasp on it, contiue to branches.
+Just now, we pushed our code directly to main branch in the repo, for now it's ok since we are learning git and gitgub as beginners but later on we will learn how it is not recommended to push directly to main branch. In order to understand this, we need to learn what branches are and how to use them. But before moving on to that, I recommend taking a break and practice all that you have learnt up until now to let it sink in. When you have developed a good grasp on it, contiue to branches.
 </div>
 
 ## Working Tree & Branches
