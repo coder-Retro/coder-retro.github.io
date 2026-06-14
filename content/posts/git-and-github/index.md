@@ -242,7 +242,7 @@ git push origin main
 ```
 The first command tells Git to safely drop .vscode/ from its tracking registry without deleting the actual files from your hard drive. The subsequent commands log your .gitignore rules into your history and upload them. If you open your remote repo on github, you will notice that the .vscode/ folder has vanished from the cloud while remaining fully intact on your machine. From this point forward, Git will silently ignore it on every single push. 
 </div>
-<img src="img/gitignore.png" alt="added gitignore" widht=600 style="border-radius: 10px">
+<img src="img/gitignore.png" alt="added gitignore" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
 Just now, we pushed our code directly to main branch in the repo, for now it's ok since we are learning git and gitgub as beginners but later on we will learn how it is not recommended to push directly to main branch. In order to understand this, we need to learn what branches are and how to use them. But before moving on to that, I recommend taking a break and practice all that you have learnt up until now to let it sink in. When you have developed a good grasp on it, contiue to branches.
 </div>
@@ -261,7 +261,7 @@ So basically when you are working on your project, it is preferred to make a fea
 Before making our feature branch, it is a convention that we must sync our local repo to our remote repo. We can do this by running the following command in our terminal:
 
 ```bash
-git checkout main
+git switch main
 git pull origin main
 ```
 The first command makes sure that we are on our main branch. If you are already on the main branch, you can skip this command. Then the second command fetches the files from remote repo onto our local repo to make sure that our local repo has the latest updates before we start working on anything. First we need a name for our feature branch, for now we will name if "feature-branch". Now let's make our feature branch by running this command:
