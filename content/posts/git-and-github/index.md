@@ -1,12 +1,12 @@
 ---
 draft: false
-title: 'Git & Github Pro Guide'
+title: 'Git & github Pro Guide'
 date: 2026-06-12
 ---
 
 # Introduction
 <div style="text-align: justify">
-Hello There! and welcome to my blog about learning git and github as a beginner. Today we are going to dive into a really famous and also widely used version control system, which is git. Along with its helper-site that allows you to have a cloud space to manage a remote version of your project's code and other files. So without any further adue, let's dive into this tool shall we?
+Hello There! and welcome to my blog about learning git and github as a beginner. Today we are going to dive into a really famous and also widely used version control system, which is git. Along with its helper-site that allows you to have a cloud space to manage a remote version of your project's code and other files. So without any further ado, let's dive into this tool shall we?
 </div>
 
 ## Introduction To Git
@@ -41,20 +41,20 @@ This command will show your installed version of git, this shows that git has be
 
 ## Introduction To Github
 <div style="text-align: justify">
-Github is basically a website that you can use in combination with git, this site allows you to have a cloud based management system for your projects. It also provides a more GUI approach towards git itself aswell. Where git manages your project locally, github manages it remotely. Basically when you use git and github together, your project is saved in two forms. These two forms are:
+github is basically a website that you can use in combination with git, this site allows you to have a cloud based management system for your projects. It also provides a more GUI approach towards git itself aswell. Where git manages your project locally, github manages it remotely. Basically when you use git and github together, your project is saved in two forms. These two forms are:
 <ul>
 <li>Local (On Your System)</li>
-<li>Remote (On Your Github)</li>
+<li>Remote (On Your github)</li>
 </ul>
 Ideally, you should keep both of these in sync so that your project stays updated and there are no gaps between you local data and remote data. Also, git and github manage your project using Repositories. Repository is just a fancy name for a folder in github terminology. In short, a repository is also called a "Repo". So you have a Local Repo and a Remote Repo.
 </div>
-<img src="img/githubLogo.png" alt="Github Logo" width=600 style="border-radius: 10px">
+<img src="img/githubLogo.png" alt="github Logo" width=600 style="border-radius: 10px">
 
 ### Github Setup
 <div style="text-align: justify">
-Now that we have already installed git, let's setup our github so that we can get into learning them both. First you need to make an account on github by going to the official github site at "<a target="_blank" href="https://github.com">Github Site</a>". Now you can make a github account by entering your email and clicking "Sign up for Github" button, then you will need to verify your account using your email and the account will be created. Or if you already have a google account, you can use that to sign in aswell using the sign in option at the top right of this webpage as shown here.
+Now that we have already installed git, let's setup our github so that we can get into learning them both. First you need to make an account on github by going to the official github site at "<a target="_blank" href="https://github.com">github Site</a>". Now you can make a github account by entering your email and clicking "Sign up for github" button, then you will need to verify your account using your email and the account will be created. Or if you already have a google account, you can use that to sign in aswell using the sign in option at the top right of this webpage as shown here.
 </div>
-<img src="img/githubSignIn.png" alt="Github Sign In" width=600 style="border-radius: 10px">
+<img src="img/githubSignIn.png" alt="github Sign In" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
 Since I already have a google account, I will login using that account and then we will go through the github's understanding regarding its interface and all.
 </div>
@@ -63,9 +63,9 @@ Since I already have a google account, I will login using that account and then 
 <div style="text-align: justify">
 When you sign in your github's interface might look quite empty as compared to mine. That is because your account is new and your haven't added much to it yet where as mine has been in use for quite a while now. Anyways, let's familiarize with github's GUI. Here is an image of my github's home page.
 </div>
-<img src="img/githubGUI.png" alt="Github Interface" width=600 style="border-radius: 10px">
+<img src="img/githubGUI.png" alt="github Interface" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
-If you take a loot at that list on the left side of my github's home page, these are my remote repositories that are managed by github. Even this blogsite that you are looking at right now, its code is being maintained using git and github, as you can see by looking at the bottom-most repo. So any repos that you will make are going to appear in this column later on. Then there is the "News/Updates" Section in the middle of the page which shows the latest updates of any activity on github. That should be all for the home interface for now. Let's configuring git.
+If you take a look at that list on the left side of my github's home page, these are my remote repositories that are managed by github. Even this blogsite that you are looking at right now, its code is being maintained using git and github, as you can see by looking at the bottom-most repo. So any repos that you will make are going to appear in this column later on. Then there is the "News/Updates" Section in the middle of the page which shows the latest updates of any activity on github. That should be all for the home interface for now. Let's configuring git.
 </div>
 
 ## Git Configuration
@@ -115,7 +115,7 @@ By now, we are inside our project folder, now we need to turn this folder into a
 git init
 git branch -M main
 ```
-What this does is that it turns the current folder into a local repo and the second command renames your current branch to "main", we will learn what a branch is when we get there, for now just let is slide and dont sweat it. Git starts monitoring any files in this folder (Local Repo) from now on. Hence, git is active and in action now.
+What this does is that it turns the current folder into a local repo and the second command renames your current branch to "main", by default it's named as master. We will learn what a branch is when we get there, for now just let is slide and dont sweat it. Git starts monitoring any files in this folder (Local Repo) from now on. Hence, git is active and in action now.
 </div>
 
 ### Remote Repo
@@ -178,9 +178,9 @@ nothing added to commit but untracked files present
 This means that git is not tracking your test.cpp yet, in order to make git track it, run the following command:
 
 ```bash
-git add test.cpp
+git add .
 ```
-Now run the status command again and you will see this now:
+This command tells git to track all the files in the current folder. Now run the status command again and you will see this now:
 
 ```bash
 On branch main
@@ -205,7 +205,7 @@ The first command create a snap shot of your current added file. Then the second
 
 #### Github Authentication
 <div style="text-align: justify">
-When you run git push origin main for the first time, your terminal will prompt you for a Username and Password. Do not enter your standard GitHub account password! Since 2021, GitHub requires a Personal Access Token (PAT) for command-line operations. Here is how to fix this. Go to your github settings:
+When you run git push origin main for the first time, your terminal will prompt you for a Username and Password. Do not enter your standard github account password! Since 2021, github requires a Personal Access Token (PAT) for command-line operations. Here is how to fix this. Go to your github settings:
 <ol>
 <li>Go to Developer settings</li>
 <li>Go to Personal access tokens</li>
@@ -224,8 +224,23 @@ git push origin main
 Now if you go back to you github and open the Demo repo and refresh the page. You will see that your test.cpp has appeared in remote repo. Your will also see the text "Any Message" in front of it, this is called a commit message and people use it to determine what change they performed in the pushed file.
 </div>
 <img src="img/firstCommit.png" alt="First Commit" width=600 style="border-radius: 10px">
+
+### Gitignore File
 <div style="text-align: justify">
-Just now, we pushed our code directly to main branch in the repo, for now it's ok since we are learning git and gitgub as beginners but later on we will learn how it is not recommended to push directly to main branch. In order to understand this, we need to learn what branches are and how to use them. But before moving on to that, I recommend taking a break and practice all that you have learnt up until now to let it sink in. When you have developed a good grasp on it, contiue to branches.
+Now if you are using vscode as your editor, you might have noticed that a folder by the name of .vscode might have appeared aside from your test.cpp, vscode stores some language based settings in this folder. However we dont want to push this folder to our repo but it still appears when we try to push our test.cpp, so let's tell git to ignore this folder using a really usefull file that git offers us, ".gitignore". First, create a new file named exactly .gitignore in the root of your local project folder (make sure it starts with a dot and has no extension like .txt). Open it, type the following folder exclusion pattern in your ".gitignore":
+
+```txt
+.vscode/
+```
+Then save and close it. Now, because we ran git add . in our previous step, Git has already indexed and started tracking our .vscode/ folder! Simply creating a .gitignore file won't stop git from tracking files it has already noticed. We need to clear it from git's active tracking memory first. Run this specific sequence of commands to untrack the folder and push your new rules to github:
+
+```bash
+git rm -r --cached .vscode
+git add .gitignore
+git commit -m "Add: gitignore"
+git push origin main
+```
+The first command tells Git to safely drop .vscode/ from its tracking registry without deleting the actual files from your hard drive. The subsequent commands log your .gitignore rules into your history and upload them. If you open your remote repo on github, you will notice that the .vscode/ folder has vanished from the cloud while remaining fully intact on your machine. From this point forward, Git will silently ignore it on every single push. Just now, we pushed our code directly to main branch in the repo, for now it's ok since we are learning git and gitgub as beginners but later on we will learn how it is not recommended to push directly to main branch. In order to understand this, we need to learn what branches are and how to use them. But before moving on to that, I recommend taking a break and practice all that you have learnt up until now to let it sink in. When you have developed a good grasp on it, contiue to branches.
 </div>
 
 ## Working Tree & Branches
@@ -317,7 +332,7 @@ git push origin main
 The first command switches control to your main branch in local repo, the second command merges the updated files from your feature branch into your main branch in local repo, then the third command updates your remote repo's main branch with these modifications as well. You can verify these change by going onto your github and checking the file in main branch to see updates.
 </div>
 
-#### Github Method
+#### github Method
 <div style="text-align: justify">
 If your are working on a project with a team in a collaborative repository, it's preferred to use the github method which requires you to generate a "PR", which stands for "Pull Request". It is basically a sort of letter that carries your updated file from you feature branch attached with it. Your team first reads your file to make sure that it doesn't require any changes to be made before it goes into the main branch for merge. When you are provided a certains number of approvals by your team, then you are allowed to merge your feature branch back into main branch. This makes sure that one individual doesnt mistakenly alter the main branch without the approval of the team. Let's learn how to generate a PR now after pushing to our remote repo's feature branch. First, go to your remote repo on github. Your will see an option to "Compare and Create Pull Request" that came when you pushed to remote's feature branch. However if you dont see this option, simply click on "Pull Requests" as shown here:
 </div>
@@ -375,7 +390,7 @@ As we can see that our main has successfully been updated and now we can safely 
 git switch main
 git pull origin main
 git branch -d feature-branch
-git push origin --delete feature-branch
+git push origin -d feature-branch
 ```
 The first command will switch us to main because in order to delete a branch, we need to move to another branch as git does not allow you to delete your currently active branch. So first command will switch us to main.Then second command will update your local's main to remote's main (updated after merge). Then third command will delete our feature branch in our local repo. And finally fourth command will delete our feature branch from our remote repo on github. You can verify the deletion of your local repo's feature branch by running:
 
@@ -386,5 +401,86 @@ You will see that your feature branch is deleted in your local repo. Similarly y
 </div>
 <img src="img/featureDeleted.png" alt="feature branch deleted" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
-Congratulations! you have learnt how to create a feature branch, add a feature to your project, merge your branch using either git commands on your personal solo repo and by opening a PR on a collaborative repo. Then you also learnt how to delete your feature branch. Now you should take a break and practice all these concepts to let them sink in. Then we will move onto our next topic which is gonna be "Commit Tracking", basically the version control part.
+Congratulations! you have learnt how to create a feature branch, add a feature to your project, merge your branch using either git commands on your personal solo repo and by opening a PR on a collaborative repo. Then you also learnt how to delete your feature branch. Now you should take a break and practice all these concepts to let them sink in.
+</div>
+
+### Clone Repo
+<div style="text-align: justify">
+Now that we know how to make a repo from scratch, let's try working on a github repo that we find amusing due to any certain reason. This is called cloning. For this, we need to clone the repo, how to do that ? First go to the location in your system where you want to save it. Then run the following command:
+
+```bash
+git clone TargetRepoURL
+```
+You can find the repo's URL on github in the "Blue Code Menu" when you open that repo, for example let's say we want to clone the Demo Repo we have been working , then we would copy the given URL from the Repo on github and replace the "TargetRepoURL" with it:
+</div>
+<img src="img/repoURL.png" alt="Cloning" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+This command would clone the repo and then you can enter the local clone repo using:
+
+```bash
+cd TargetRepoName
+```
+However, do know that the repo might be owned by someone else and they might not have given you the rights to push anything to the remote repo like a collaborator could do. So you can play around with the local repo, but not the remote version of this cloned repo. Other than that, making branches and merging into main in your local repo is all the same as studied before. So now you know how to make a repo from scratch as well as how to clone a built one. Now we can move onto the actual core concepts of git and github, basically the version control part of it, that allows us to track the changes made to files in our project and also to load old checkpoints if needed.
+</div>
+
+## Version Control
+<div style="text-align: justify">
+Version control as discussed before, allows us to go to different points in the history of our project's evolution. How to do this now. Lets say that we want to remove the feature that we added using our feature branch into test.cpp. We can use version control capability of git to load the old commit where we had not added the feature. Let's learn how to do this. For this, we will need the commit hash of that version. How to find that ? We run a simple command:
+
+```bash
+git log
+```
+You will see the history of all the commits made to the project. Demo Repo's History looks like this right now:
+
+```bash
+commit a912124aa9e001ead619a7dd055a2955
+557b177a (HEAD -> 
+main)
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sat Jun 13 16:13:58 2026 +0500
+
+    feat: Added Feature
+
+commit 9341d6413f5a0486f48c083b16381e3c
+07f8e665
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sat Jun 13 01:40:37 2026 +0500
+
+    Any Message
+```
+If you want to start reading the commit history from the beginning of the project, then read the git log's output from bottom to up. As you can see here that there are only two commits. One that we made through our main branch (Any Message) and the second that we made through our feature branch (feat: Added Feature). Git log also tells us the time those commits were made along with the attached commit message. Now back to commit hash that we needed. You see the first line of each commit that says "commit" and then a long code after it, this long code is called the "Commit Hash". In order to go to a certain commit, we need its commit hash. Now as we said before that we want to go to a part where we had not added the feature, we can look at the commit messages to know where we want to go. The last commit says "feat: Added Feature", so we dont need this one. The one before that says "Any Message", which was our first commit. Let's copy the commit hash of this commit. Now in order to remove a feature, we must make a new branch like we made one to add it. Let's revise the branch making process shall we? First sync you local main with remote main using:
+
+```bash
+git switch main
+git pull origin main
+```
+Then make a branch using the branch creation command and also switch to it. Let's call this branch feature2:
+
+```bash
+git switch -c feature2
+```
+Now let's run branch list command to make sure that our branch has been created and we are on the current branch:
+
+```bash
+git branch
+```
+It should look something like this:
+
+```bash
+* feature2
+  main
+```
+Not let's use our commit hash to load the old state of our code where our code did not have the added feature, for this we need to run this command using our commit hash:
+
+```bash
+git reset --soft 9341d6413f5a0486f48c083b16381e3c
+```
+You will notice that your code does not go back to its old state in your editor and feature line is still there, This is because we used "--soft" flag. This flag leaves our opened file untounched, but adds the commit hash version of the file we just tracked to added section, now if we commit and push, we will be pushing the old state file. If we want to restore the code in our editor as well and lost our current changes in the opened file, we can replace the "--soft" flag with "--hard" flag:
+
+```bash
+git reset --hard 9341d6413f5a0486f48c083b16381e3c
+
+```
+It is preferred to use the soft flag if you dont wanna lost your currently opened file, but if you dont need this file and can afford to lose the uncommited changes, then you can use the hard flag. Anyways, this is your original commited old file that you wanted to get to. Now we can just add, commit and push it to restore our old form of project. Let's do this:
+
 </div>
