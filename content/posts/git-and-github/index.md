@@ -437,7 +437,7 @@ git log
 You will see the history of all the commits made to the project. My Demo Repo's History looks like this right now:
 
 ```bash
-commit: 6998eaa85661853059f2bd76249662a63df64ce8
+commit 6998eaa85661853059f2bd76249662a63df64ce8
 (HEAD -> main, origin/main, origin/HEAD)
 
 Author: coder-Retro <hasnainqadri9c@gmail.com>
