@@ -544,5 +544,5 @@ git pull origin main
 git branch -d remove-feature
 git push origin -d remove-feature
 ```
-We already know what each of these commands do step by step. Congratulations on reverted your feature and restoring an older version of your project. This is one of the most important and amazing powers a developer can desire to have and that is exactly what git and github deliver.
+We already know what each of these commands do step by step. Congratulations on reverting your feature and restoring an older version of your project. This is one of the most important and amazing powers a developer can desire to have and that is exactly what git and github deliver.
 </div>
