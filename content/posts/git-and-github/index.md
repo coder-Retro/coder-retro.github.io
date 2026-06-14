@@ -237,10 +237,14 @@ Then save and close it. Now, because we ran git add . in our previous step, Git 
 ```bash
 git rm -r --cached .vscode
 git add .gitignore
-git commit -m "Add: gitignore"
+git commit -m "Add: .vscode to gitignore"
 git push origin main
 ```
-The first command tells Git to safely drop .vscode/ from its tracking registry without deleting the actual files from your hard drive. The subsequent commands log your .gitignore rules into your history and upload them. If you open your remote repo on github, you will notice that the .vscode/ folder has vanished from the cloud while remaining fully intact on your machine. From this point forward, Git will silently ignore it on every single push. Just now, we pushed our code directly to main branch in the repo, for now it's ok since we are learning git and gitgub as beginners but later on we will learn how it is not recommended to push directly to main branch. In order to understand this, we need to learn what branches are and how to use them. But before moving on to that, I recommend taking a break and practice all that you have learnt up until now to let it sink in. When you have developed a good grasp on it, contiue to branches.
+The first command tells Git to safely drop .vscode/ from its tracking registry without deleting the actual files from your hard drive. The subsequent commands log your .gitignore rules into your history and upload them. If you open your remote repo on github, you will notice that the .vscode/ folder has vanished from the cloud while remaining fully intact on your machine. From this point forward, Git will silently ignore it on every single push. 
+</div>
+<img src="img/gitignore.png" alt="added gitignore" widht=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Just now, we pushed our code directly to main branch in the repo, for now it's ok since we are learning git and gitgub as beginners but later on we will learn how it is not recommended to push directly to main branch. In order to understand this, we need to learn what branches are and how to use them. But before moving on to that, I recommend taking a break and practice all that you have learnt up until now to let it sink in. When you have developed a good grasp on it, contiue to branches.
 </div>
 
 ## Working Tree & Branches
@@ -425,39 +429,49 @@ However, do know that the repo might be owned by someone else and they might not
 
 ## Version Control
 <div style="text-align: justify">
-Version control as discussed before, allows us to go to different points in the history of our project's evolution. How to do this now. Lets say that we want to remove the feature that we added using our feature branch into test.cpp. We can use version control capability of git to load the old commit where we had not added the feature. Let's learn how to do this. For this, we will need the commit hash of that version. How to find that ? We run a simple command:
+Version control as discussed before, allows us to go to different points in the history of our project's evolution. How to do this now. Lets say that we want to remove the feature that we added using our feature branch into test.cpp. We can use version control capability of git to revert the commit in which we added the feature. Let's learn how to do this. For this, we will need the commit hash of that version. How to find that ? We run a simple command:
 
 ```bash
 git log
 ```
-You will see the history of all the commits made to the project. Demo Repo's History looks like this right now:
+You will see the history of all the commits made to the project. My Demo Repo's History looks like this right now:
 
 ```bash
-commit a912124aa9e001ead619a7dd055a2955
-557b177a (HEAD -> 
-main)
+commit: 6998eaa85661853059f2bd76249662a63df64ce8
+(HEAD -> main, origin/main, origin/HEAD)
+
 Author: coder-Retro <hasnainqadri9c@gmail.com>
-Date:   Sat Jun 13 16:13:58 2026 +0500
+Date:   Sun Jun 14 18:14:56 2026 +0500
 
     feat: Added Feature
 
-commit 9341d6413f5a0486f48c083b16381e3c
-07f8e665
+commit a502c4a53ae37f001db0555b325fd3339f5db4bf
 Author: coder-Retro <hasnainqadri9c@gmail.com>
-Date:   Sat Jun 13 01:40:37 2026 +0500
+Date:   Sun Jun 14 18:12:00 2026 +0500
+
+    Add: .vscode to gitignore
+
+commit 08964f140eee9b70a2f462094fd5947eb933d820
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sun Jun 14 18:07:58 2026 +0500
 
     Any Message
 ```
-If you want to start reading the commit history from the beginning of the project, then read the git log's output from bottom to up. As you can see here that there are only two commits. One that we made through our main branch (Any Message) and the second that we made through our feature branch (feat: Added Feature). Git log also tells us the time those commits were made along with the attached commit message. Now back to commit hash that we needed. You see the first line of each commit that says "commit" and then a long code after it, this long code is called the "Commit Hash". In order to go to a certain commit, we need its commit hash. Now as we said before that we want to go to a part where we had not added the feature, we can look at the commit messages to know where we want to go. The last commit says "feat: Added Feature", so we dont need this one. The one before that says "Any Message", which was our first commit. Let's copy the commit hash of this commit. Now in order to remove a feature, we must make a new branch like we made one to add it. Let's revise the branch making process shall we? First sync you local main with remote main using:
+If you want to start reading the commit history from the beginning of the project, then read the git log's output from bottom to upwards. As you can see here that there are only three commits. Initial commit that we made through our main branch (Any Message), second commit where we added the gitignore and the third commit that we made through our feature branch (feat: Added Feature). Git log also tells us the time those commits were made along with the attached commit message. Now back to commit hash that we needed. You see the first line of each commit that says "commit" and then a long code after it, this long code is called the "Commit Hash".
+</div>
+
+### Revert Commit
+<div style="text-align: justify">
+In order to revert our feature commit, we need its commit hash. We can look at the commit messages to know where we want to go. The last commit says "feat: Added Feature", so that's the one we need to revert. Let's copy the commit hash of this commit. Now in order to remove a feature, we must make a new branch like we made one to add it. Let's revise the branch making process shall we? First sync you local main with remote main using:
 
 ```bash
 git switch main
 git pull origin main
 ```
-Then make a branch using the branch creation command and also switch to it. Let's call this branch feature2:
+Then make a branch using the branch creation command and also switch to it. Let's call this branch "remove-feature":
 
 ```bash
-git switch -c feature2
+git switch -c remove-feature
 ```
 Now let's run branch list command to make sure that our branch has been created and we are on the current branch:
 
@@ -467,20 +481,68 @@ git branch
 It should look something like this:
 
 ```bash
-* feature2
+* remove-feature
   main
 ```
-Not let's use our commit hash to load the old state of our code where our code did not have the added feature, for this we need to run this command using our commit hash:
+Not let's use our copied commit hash to revert the feature. For this, we need to run this command using our commit hash:
 
 ```bash
-git reset --soft 9341d6413f5a0486f48c083b16381e3c
+git revert --no-edit 6998eaa85661853059f2bd76249662a63df64ce8
+git push origin remove-feature
 ```
-You will notice that your code does not go back to its old state in your editor and feature line is still there, This is because we used "--soft" flag. This flag leaves our opened file untounched, but adds the commit hash version of the file we just tracked to added section, now if we commit and push, we will be pushing the old state file. If we want to restore the code in our editor as well and lost our current changes in the opened file, we can replace the "--soft" flag with "--hard" flag:
+Normally "git revert CommitHash" would have also worked, but sometime you will get an error regarding and editor called "vi" which might not be installed in your system, so to bypass that error we use the "--no-edit" flag. Now the test.cpp in the remove-feature branch of our repo has been restored to its original form where the feature did not exist.
+</div>
+<img src="img/featureReverted.png" alt="Feature Reverted" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Now let's merge our remove-feature into our main to restore the original code as well:
 
 ```bash
-git reset --hard 9341d6413f5a0486f48c083b16381e3c
-
+git switch main
+git merge remove-feature
+git push origin main
 ```
-It is preferred to use the soft flag if you dont wanna lost your currently opened file, but if you dont need this file and can afford to lose the uncommited changes, then you can use the hard flag. Anyways, this is your original commited old file that you wanted to get to. Now we can just add, commit and push it to restore our old form of project. Let's do this:
+The first command will switch to main branch in local repo, the second command will merge the remove-feature of local repo into main branch of local repo and finally third command will update the code on remote repo's main branch using the local repo's main. Now let's run git log to verify if our feature has been removed, you will see this:
 
+```bash
+commit 69a0bcc56c2173ab9e01ad92fcc1fe7f872adb3d
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sun Jun 14 21:53:54 2026 +0500
+
+    Revert "feat: Added Feature"
+    
+    This reverts commit 6998eaa85661853059f2bd76249662a63df64ce8.
+
+commit 6998eaa85661853059f2bd76249662a63df64ce8
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sun Jun 14 18:14:56 2026 +0500
+
+    feat: Added Feature
+
+commit a502c4a53ae37f001db0555b325fd3339f5db4bf
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sun Jun 14 18:12:00 2026 +0500
+
+    Add: .vscode to gitignore
+
+commit 08964f140eee9b70a2f462094fd5947eb933d820
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sun Jun 14 18:07:58 2026 +0500
+
+    Any Message
+```
+You can also verify the feature removal by going to remote repo's main:
+</div>
+<img src="img/mainReverted.png" alt="Main Reverted" width=600 style="border-radius: 10px">
+
+#### Cleanup
+<div style="text-align: justify">
+As we can see that our feature has been reverted all over our project and initial form of code has been restored. Now all we have left to do is to delete our remove-feature branch to cleanup. Let's revise the branch deletion process by running the following commands:
+
+```bash
+git switch main
+git pull origin main
+git branch -d remove-feature
+git push origin -d remove-feature
+```
+We already know what each of these commands do step by step. Congratulations on reverted your feature and restoring an older version of your project. This is one of the most important and amazing powers a developer can desire to have and that is exactly what git and github deliver.
 </div>
