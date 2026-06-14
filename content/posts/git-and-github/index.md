@@ -396,7 +396,7 @@ git pull origin main
 git branch -d feature-branch
 git push origin -d feature-branch
 ```
-The first command will switch us to main because in order to delete a branch, we need to move to another branch as git does not allow you to delete your currently active branch. So first command will switch us to main.Then second command will update your local's main to remote's main (updated after merge). Then third command will delete our feature branch in our local repo. And finally fourth command will delete our feature branch from our remote repo on github. You can verify the deletion of your local repo's feature branch by running:
+The first command will switch us to main because in order to delete a branch, we need to move to another branch as git does not allow you to delete your currently active branch. So first command will switch us to main. Then second command will update your local's main to remote's main (updated after merge). Then third command will delete our feature branch in our local repo. And finally fourth command will delete our feature branch from our remote repo on github. You can verify the deletion of your local repo's feature branch by running:
 
 ```bash
 git branch
@@ -415,7 +415,7 @@ Now that we know how to make a repo from scratch, let's try working on a github 
 ```bash
 git clone TargetRepoURL
 ```
-You can find the repo's URL on github in the "Blue Code Menu" when you open that repo, for example let's say we want to clone the Demo Repo we have been working , then we would copy the given URL from the Repo on github and replace the "TargetRepoURL" with it:
+You can find the repo's URL on github in the "Blue Code Menu" when you open that repo, for example let's say we want to clone the Demo Repo we have been working on, then we would copy the given URL from the Repo on github and replace the "TargetRepoURL" with it:
 </div>
 <img src="img/repoURL.png" alt="Cloning" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
