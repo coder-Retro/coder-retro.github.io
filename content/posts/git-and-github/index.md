@@ -755,7 +755,156 @@ There we go, project restored to intended point and all cleaned up. Again, I wou
 
 ## Merge Conflict
 <div style="text-align: justify">
+Let's start with the theoretical definition and reasons of merge conflict. When two branches edit the same line in the same file and the first branch merges normally, but then the second branch will face a conflict when it tries to merge, git falls into a decisive scenario regarding whose modifications to keep and whose to discard. Now git doesnt have decision making capabilties, this scenario is called a "Merge Conflict". 
+</div>
 
+### Resolution
+<div style="text-align: justify">
+Since git or github dont know what to do, they tell the human about the rising conflict and ask the human to decide which changes should be kept and which should be discarded. This is the "Manual Part" of git and github where they rely on us, just like we relied on them the whole project.
+</div>
+
+### Form Merge Conflict
+<div style="text-align: justify">
+It's better to learn this process using the github merge method instead of git method method, because merge conflicts usually arise when multiple people are working together in the same file, and you dont usually have multiple people working on tha same local machine, so most merge conflicts occur in a collaborative repo. For this let's try making two branches as if it were two different users, and then edit the same line in test.cpp to give rise to a merge conflict and then we will resolve it. Let's start by making branch-1 and branch-2:
+
+```bash
+git switch -c branch-1
+git switch -c branch-2
+```
+Now if we run:
+
+```bash
+git branch
+```
+We will see something like this:
+
+```bash
+  branch-1
+* branch-2
+  main
+```
+Now lets use branch-2 to edit a line in test.cpp. Open the test.cpp and make input a line like this:
+
+```cpp
+#include<iostream>
+int main(){
+    std::cout << "This is my Demo Project";
+    std::cout << "\nThis is Feature 1";
+    std::cout << "\nThis is Branch-2's edit";
+    return 0;
+}
+```
+Now let's update branch-2's remote:
+
+```bash
+git add test.cpp
+git commit -m "Add: Branch-2 edited line 5"
+git push origin branch-2
+```
+Now let's switch to branch-1 and edit the same line of test.cpp using branch-1:
+
+```bash
+git switch branch-1
+```
+After this, open test.cpp and add this line:
+
+```cpp
+#include<iostream>
+int main(){
+    std::cout << "This is my Demo Project";
+    std::cout << "\nThis is Feature 1";
+    std::cout << "\nThis is Branch-1's edit";
+    return 0;
+}
+```
+Now save the file and push it to remote branch-1:
+
+```bash
+git add test.cpp
+git commit -m "Add: Branch-1 edited line 5"
+git push origin branch-1
+```
+Lets perform the merge process by first opening a PR for each branch. Let's revise the github merge method while doing this. First we need to go to github. Now we will see an option for both branch's pull request on the main page right now, if they dont appear then we can open PR's by going to PR tab as well. Since we have already learnt how to do that before, you can use that method as well. I will directly click the following button for now:
+</div>
+<img/ src="img/branch1PR.png" alt="Branch One PR" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Then add a description if you want and click the "Create Pull Request" button to submit a PR for branch-1's merge and PR will be generated. You will notice that everything is normal and PR is allowed to merge withouth any problems.
+</div>
+<img/ src="img/branch1PROpen.png" alt="Branch One PR Open" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Now go to main page of your repo and do the same process for branch-2's PR submission. Also, since I havent applied any security checks in my personal repo to PRs, I am getting this dialogue box:
+</div>
+<img/ src="img/PRsecurityCheck.png" alt="PR Security Check" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+If you are getting this too in your personal repo, just ignore it right now because in a proofessional repo with a team, security checks will be applied and this box wont appear. For now, just perform the same PR opening process for branch-2 yourself like I did for branch-1. When you have successfully opened a PR for branch-2 just merge it right there using the Merge button at the bottom.
+</div>
+<img/ src="img/branch2Merge.png" alt="Branch 2 Merge" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+You will notice that branch-2 safely merged and everything is normal up until this point, but now if you go to PR tab and open the PR of branch-1, you will see this:
+</div>
+<img/ src="img/mergeConflict.png" alt="Merge Conflict" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+That is a "Merge Conflict", this happened because branch-2 that just merged into main, edited the same line 5 in test.cpp that our branch-1 has changed. Now github is telling us about this conflict by showing us "Merge Conflict". You can also see that our merging has also been locked. Merging wont open again until merge conflict has been resolved. Let's learn how to resolve this.
+</div>
+
+### Resolve Merge Conflict
+<div style="text-align: justify">
+We can resolve the merge conflict directly on github. Let's start. First click on this "Merge Conflicts" warning at the top right:
+</div>
+<img/ src="img/conflictWarning.png" alt="Conflict Warning" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+This will open this side panel in which you have to click this "Resolve Conflicts" button:
+</div>
+<img/ src="img/resolveConflict.png" alt="Resolve Conflict" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Finally you will be greeted with the file having the merge conflict, github will show you the changes made by your predecessor and the changes made by you as well separately. Along with that, it will also give you the option to keep your changes and discard the predecessor's, keep predecessor's changes and discard yours, or even keep both the changes. You can select whichever is needed depending on the scenario. This is the part where team communication comes in, such a scenario shall be discussed with team and only than should such a decision be taken.
+</div>
+<img/ src="img/acceptChanges.png" alt="Accept Changes" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+For now, I will keep both changes. For this, I will click the third option:
+</div>
+<img/ src="img/acceptBoth.png" alt="Accept Both Changes" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Also in the case of accepting both changes, you might notice that github puts your changes first and then your predecessor's. So review the file to make sure if that is the order your file requires. In a code file, an error in the sequence of the statements can cause unwanted behaviour. So double check the sequence and then click the "Mark as resolved" button at the top right:
+</div>
+<img/ src="img/conflictResolved.png" alt="Conflict Resolved" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Then you have to click the "Commit Merge" button to update your PR:
+</div>
+<img/ src="img/commitMerge.png" alt="Commit Merge" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+You will now see that your PR doesnt have the merge conflict warning anymore and it says ready to merge, and if have attained the number of required reviews then your merge option shall also be unlocked now:
+</div>
+<img/ src="img/readyToMerge.png" alt="Ready To Merge" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Merge your PR by using the merge PR option at the bottom, you will see that your PR has successfull been merged into the main, you can verify this by going to main if you want.
+</div>
+
+### Cleanup
+<div style="text-align: justify">
+Now let's go back to our terminal and update our local repo's main to remote's main. And also delete branch-1 and branch-2 to perform the cleanup.
+
+```bash
+git switch main
+git pull origin main
+git branch -d branch-1
+git push origin -d branch-1
+git branch -d branch-2
+git push origin -d branch-2
+```
+Your can run git branch to verify the cleanup if you want. Congratulation! you have learnt what merge conflicts are, how they form and how you can fix them. We are officially done with our git and github guide so let's delete our Demo repo and mark an end to this journey. You can delete a Repo by going to the "Settings" tab  on github.
+</div>
+<img/ src="img/settings.png" alt="Setting Tab" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Then scroll to the bottom of the page and you will see a "Delete This Repository" button, click it:
+</div>
+<img/ src="img/deleteRepo.png" alt="Delete Repo" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+It will ask you to confirm that you want to delete the Repo. If you dont need the repo and are sure to delete it, confirm it. It might ask you to retype the Repo name, so just copy it from the above and paste it below:
+</div>
+<img/ src="img/confirmDeletion.png" alt="Confirm Deletion" width=600 style="border-radius: 10px">
+<div style="text-align: justify">
+Now normally you would be sent a code to your email which you need to enter here and delete the repo, but if someone has setup the "GitHub Mobile App" then you will see a "Number" on your system's screen, and now you need to open the app and enter that "Number". Either way, Repo will be deleted.
 </div>
 
 ## Summary
