@@ -765,7 +765,7 @@ Since git or GitHub don't know what to do, they tell the human about the rising 
 
 ### Form Merge Conflict
 <div style="text-align: justify">
-It's better to learn this process using the GitHub merge method instead of git method, because merge conflicts usually arise when multiple people are working together in the same file, and you don't usually have multiple people working on the same local machine, so most merge conflicts occur in a collaborative repo. For this let's try making two branches as if it were two different users, and then edit the same line in test.cpp to give rise to a merge conflict and then we will resolve it. Let's start by making branch-1 and branch-2:
+It's better to learn this process using the GitHub merge method instead of git method, because merge conflicts usually arise when multiple people are working together in the same file, and you don't usually have multiple people working on the same local machine, so most merge conflicts occur in a collaborative repo. For this let's try making two branches as if it were two different users, and then edit the same line in test.cpp to give rise to a merge conflict and then we will resolve it. Let's start by making both branches:
 
 ```bash
 git switch -c branch-1
