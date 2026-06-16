@@ -757,3 +757,26 @@ There we go, project restored to intended point and all cleaned up. Again, I wou
 <div style="text-align: justify">
 
 </div>
+
+## Summary
+<div style="text-align: justify">
+In this guide, we learnt:
+<ol>
+<li>Git Setup</li>
+<li>Github Setup</li>
+<li>Repo Setup</li>
+<li>Pushing Files to Repo</li>
+<li>Cloning Repo</li>
+<li>Branch Management</li>
+<li>Branch Merging</li>
+<li>Basic Version Control</li>
+<li>Advanced Version Cobtrol</li>
+<li>Merge Conflict</li>
+</ol>
+With these skills, you have developed all the ability to handle a project using git and github, whether it is your solo project or a collaborated one. Best of luck ahead with this knowlede guys, hope I was able to help you in your learning journey. I am Retro and this has been a really long, but beautiful journey, Sayonara!
+</div>
+
+## Credits
+<div style="text-align: justify">
+I would like to say thanks to my friend "Velanora" for her help during the making of this guide, as her help allowed to tackle a really complex topic of git and github which is merging PRs. So credits to her and also, she herself is a blog writer and documents her learning journey so you can checkout her blogs at "<a target="_blank" href="https://velanora.github.io">Velanora Blogs</a>".
+</div>
