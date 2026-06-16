@@ -52,7 +52,7 @@ Ideally, you should keep both of these in sync so that your project stays update
 
 ### GitHub Setup
 <div style="text-align: justify">
-Now that we have already installed git, let's setup our GitHub so that we can get into learning them both. First you need to make an account on GitHub by going to the official GitHub site at "<a target="_blank" href="https://GitHub.com">GitHub Site</a>". Now you can make a GitHub account by entering your email and clicking "Sign up for GitHub" button, then you will need to verify your account using your email and the account will be created. Or if you already have a google account, you can use that to sign in aswell using the sign in option at the top right of this webpage as shown here.
+Now that we have already installed git, let's setup our GitHub so that we can get into learning them both. First you need to make an account on GitHub by going to the official GitHub site at "<a target="_blank" href="https://github.com">GitHub Site</a>". Now you can make a GitHub account by entering your email and clicking "Sign up for GitHub" button, then you will need to verify your account using your email and the account will be created. Or if you already have a google account, you can use that to sign in aswell using the sign in option at the top right of this webpage as shown here.
 </div>
 <img src="img/GitHubSignIn.png" alt="GitHub Sign In" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
@@ -244,7 +244,7 @@ The first command tells Git to safely drop .vscode/ from its tracking registry w
 </div>
 <img src="img/gitignore.png" alt="added gitignore" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
-Just now, we pushed our code directly to main branch in the repo, for now it's ok since we are learning git and gitgub as beginners but later on we will learn how it is not recommended to push directly to main branch. In order to understand this, we need to learn what branches are and how to use them. But before moving on to that, I recommend taking a break and practice all that you have learnt up until now to let it sink in. When you have developed a good grasp on it, continue to branches.
+Just now, we pushed our code directly to main branch in the repo, for now it's ok since we are learning git and GitHub as beginners but later on we will learn how it is not recommended to push directly to main branch. In order to understand this, we need to learn what branches are and how to use them. But before moving on to that, I recommend taking a break and practice all that you have learnt up until now to let it sink in. When you have developed a good grasp on it, continue to branches.
 </div>
 
 ## Working Tree & Branches
