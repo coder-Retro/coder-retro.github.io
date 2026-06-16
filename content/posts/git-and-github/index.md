@@ -13,7 +13,7 @@ Hello There! and welcome to my blog about learning git and GitHub as a beginner.
 <div style="text-align: justify">
 As said before, git is a version control system for your project. But what does a version control system even mean ? A version control system is a system that allows you to track all the changes made in your project's files by keeping a log of its history. You can view this history any time using git commands. This also allows you to jump back to any older version of your project where you had not applied the latest changes.
 </div>
-<img src="img/gitLogo.png" alt="Git Logo Image" width=600 style="border-radius: 10px">
+<img src="img/gitLogo.png" alt="Git Logo Image" width="600" style="border-radius: 10px">
 
 ### Benefits Of Using Git
 <div style="text-align: justify">
@@ -24,7 +24,7 @@ Think of git as a safe system that allows you to manage your project in such a w
 <div style="text-align: justify">
 With that out of the way, let's start with how to setup git in our system. This is gonna be an easy process don't worry and just follow along step by step slowly. First of all we need to download git, we can do this by going to git's official download site at "<a target="_blank" href="https://git-scm.com/install/windows">Git Download Site</a>". You will see a page that looks like this.
 </div>
-<img src="img/GitDownloadSite.png" alt="Git Download Site" width=600 style="border-radius: 10px">
+<img src="img/GitDownloadSite.png" alt="Git Download Site" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Now if you are installing git on windows, you can download any of these setups and follow the on-screen instructions to install git on windows, you don't really need to change any configurations while running the setup, just keep pressing next until it starts the installation. Now if you are installing git on Mac OS or a Debian Based Linux Distro, you can go to the Mac or Linux Tab and follow the given commands to install git. However, I am running Arch Linux and the git site doesn't provide the respective installation process so I will tell you how to do it on Arch as well. don't worry, all you need is a single terminal command:
 
@@ -48,13 +48,13 @@ GitHub is basically a website that you can use in combination with git, this sit
 </ul>
 Ideally, you should keep both of these in sync so that your project stays updated and there are no gaps between your local data and remote data. Also, git and GitHub manage your project using Repositories. Repository is just a fancy name for a folder in GitHub terminology. In short, a repository is also called a "Repo". So you have a Local Repo and a Remote Repo.
 </div>
-<img src="img/GitHubLogo.png" alt="GitHub Logo" width=600 style="border-radius: 10px">
+<img src="img/GitHubLogo.png" alt="GitHub Logo" width="600" style="border-radius: 10px">
 
 ### GitHub Setup
 <div style="text-align: justify">
 Now that we have already installed git, let's setup our GitHub so that we can get into learning them both. First you need to make an account on GitHub by going to the official GitHub site at "<a target="_blank" href="https://github.com">GitHub Site</a>". Now you can make a GitHub account by entering your email and clicking "Sign up for GitHub" button, then you will need to verify your account using your email and the account will be created. Or if you already have a Google account, you can use that to sign-in as well using the sign-in option at the top right of this webpage as shown here.
 </div>
-<img src="img/GitHubSignIn.png" alt="GitHub Sign In" width=600 style="border-radius: 10px">
+<img src="img/GitHubSignIn.png" alt="GitHub Sign In" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Since I already have a google account, I will login using that account and then we will go through the GitHub's understanding regarding its interface and all.
 </div>
@@ -63,7 +63,7 @@ Since I already have a google account, I will login using that account and then 
 <div style="text-align: justify">
 When you sign in your GitHub's interface might look quite empty as compared to mine. That is because your account is new and you haven't added much to it yet whereas mine has been in use for quite a while now. Anyways, let's familiarize with GitHub's GUI. Here is an image of my GitHub's home page.
 </div>
-<img src="img/GitHubGUI.png" alt="GitHub Interface" width=600 style="border-radius: 10px">
+<img src="img/GitHubGUI.png" alt="GitHub Interface" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 If you take a look at that list on the left side of my GitHub's home page, these are my remote repositories that are managed by GitHub. Even this blogsite that you are looking at right now, its code is being maintained using git and GitHub, as you can see by looking at the bottom-most repo. So any repos that you will make are going to appear in this column later on. Then there is the "News/Updates" Section in the middle of the page which shows the latest updates of any activity on GitHub. That should be all for the home interface for now. Let's start configuring git.
 </div>
@@ -122,15 +122,15 @@ What this does is that it turns the current folder into a local repo and the sec
 <div style="text-align: justify">
 After this we need to make a remote repo using GitHub which we will then connect this local repo to. In order to create a remote repo, go to your GitHub's home page and look for the "plus icon with a dropdown menu" in the navigation bar. Click the dropdown arrow and you will see the following options in the list that appears:
 </div>
-<img src="img/newRepo.png" alt="New Repo Option" width=600 style="border-radius: 10px">
+<img src="img/newRepo.png" alt="New Repo Option" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Select the "New repository" option. You will be greeted with repo creation page, name your remote repo same as your local repo for easy management. Since my local repo was named Demo, I will name remote as Demo too.
 </div>
-<img src="img/repoConfig.png" alt="New Repo Option" width=600 style="border-radius: 10px">
+<img src="img/repoConfig.png" alt="New Repo Option" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 For now, don't change any other settings and just click on "Create repository" button at the bottom right. Now you will be greeted with a new page that contains our repo's HTTPS URL which we need to copy. We need this to connect our local repo to remote repo. Copy the URL by clicking at the following button:
 </div>
-<img src="img/repoToken.png" alt="Repo Token" width=600 style="border-radius: 10px">
+<img src="img/repoToken.png" alt="Repo Token" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Now we can go back to connect our local repo to remote repo using terminal.
 </div>
@@ -140,7 +140,7 @@ Now we can go back to connect our local repo to remote repo using terminal.
 In order to connect our local repo to remote repo, run the following command but replace my repos HTTPS URL with your repo's:
 
 ```bash
-git remote add origin https://GitHub.com/coder-Retro/Demo.git
+git remote add origin https://github.com/coder-Retro/Demo.git
 ```
 This command connects our local repo to the remote repo and allows the communication between both of them from now on, we can tranfer data from local to remote and vice versa now. Congratulations on making your first repository. Next up, we will learn how to add contents to our repos.
 </div>
@@ -223,7 +223,7 @@ git push origin main
 ```
 Now if you go back to you GitHub and open the Demo repo and refresh the page. You will see that your test.cpp has appeared in remote repo. You will also see the text "Any Message" in front of it, this is called a commit message and people use it to determine what change they performed in the pushed file.
 </div>
-<img src="img/firstCommit.png" alt="First Commit" width=600 style="border-radius: 10px">
+<img src="img/firstCommit.png" alt="First Commit" width="600" style="border-radius: 10px">
 
 ### Gitignore File
 <div style="text-align: justify">
@@ -242,7 +242,7 @@ git push origin main
 ```
 The first command tells Git to safely drop .vscode/ from its tracking registry without deleting the actual files from your hard drive. The subsequent commands log your .gitignore rules into your history and upload them. If you open your remote repo on GitHub, you will notice that the .vscode/ folder has vanished from the cloud while remaining fully intact on your machine. From this point forward, Git will silently ignore it on every single push. 
 </div>
-<img src="img/gitignore.png" alt="added gitignore" width=600 style="border-radius: 10px">
+<img src="img/gitignore.png" alt="added gitignore" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Just now, we pushed our code directly to main branch in the repo, for now it's okay since we are learning git and GitHub as beginners but later on we will learn how it is not recommended to push directly to main branch. In order to understand this, we need to learn what branches are and how to use them. But before moving on to that, I recommend taking a break and practice all that you have learnt up until now to let it sink in. When you have developed a good grasp on it, continue to branches.
 </div>
@@ -251,7 +251,7 @@ Just now, we pushed our code directly to main branch in the repo, for now it's o
 <div style="text-align: justify">
 When we are working on git and GitHub, we need to know how it is structured and handled inside our repo, basically our entire project is organized similar to a tree structure and you can say the branch that we just pushed our test.cpp to, yes the "main branch" is the trunk of this tree. Our main branch holds the deployed version of our project which means that all the code on our main branch, is deployed in the field. Then how do we add new features to it? How do we maintain the features without compromising the main deployed code? How do we test and experiment with new features without ruining our actual project? That is where feature branches come in. A feature branch is basically a branch that diverges out of the main branch, we use this branch to create a separate copy of our project and work on that copy so that we don't modify the actual project on the main branch. When our modifications are completed and we have tested the new feature, we merge our feature branch back into our main branch to apply these new features to the deployed project. This entire branch structure is called a "Working Tree".
 </div>
-<img src="img/workingTree.png" alt="Working Tree Image" width=600 style="border-radius: 10px">
+<img src="img/workingTree.png" alt="Working Tree Image" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 So basically when you are working on your project, it is preferred to make a feature branch and work on that so that your main project remains safe. And this is why it is not recommended to push directly onto the main branch as we did before. Now that we have learnt what a branch is, let's try to make one and then we will use that branch to add some more features to our test.cpp.
 </div>
@@ -305,15 +305,15 @@ git push origin feature-branch
 ```
 Now go to your GitHub and open your test.cpp, your will see something like:
 </div>
-<img src="img/mainBranch.png" alt="main branch" width=600 style="border-radius: 10px">
+<img src="img/mainBranch.png" alt="main branch" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 As you can see, the code hasn't changed. This is because we pushed the code to feature branch this time and not the main branch. Let's look at the code in our feature branch to see if our changes are showing there. You can do this by opening the branch drop down menu and selecting feature branch as shown:
 </div>
-<img src="img/branchSwitch.png" alt="Branch Switch" width=600 style="border-radius: 10px">
+<img src="img/branchSwitch.png" alt="Branch Switch" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 This will take you to your feature branch and now you can see the updated feature code that you have pushed to your feature branch. It should look something like this:
 </div>
-<img src="img/featureBranch.png" alt="feature branch" width=600 style="border-radius: 10px">
+<img src="img/featureBranch.png" alt="feature branch" width="600" style="border-radius: 10px">
 
 ### Merge Feature Branch
 <div style="text-align: justify">
@@ -340,51 +340,51 @@ The first command switches control to your main branch in local repo, the second
 <div style="text-align: justify">
 If you are working on a project with a team in a collaborative repository, it's preferred to use the GitHub method which requires you to generate a "PR", which stands for "Pull Request". It is basically a sort of letter that carries your updated file from your feature branch attached with it. Your team first reads your file to make sure that it doesn't require any changes to be made before it goes into the main branch for merge. When you are provided a certain number of approvals by your team, then you are allowed to merge your feature branch back into the main branch. This makes sure that one individual doesn't accidentally alter the main branch without the approval of the team. Let's learn how to generate a PR now after pushing to our remote repo's feature branch. First, go to your remote repo on GitHub. You will see an option to "Compare and Create Pull Request" that came when you pushed to remote's feature branch. However if you don't see this option, simply click on "Pull Requests" as shown here:
 </div>
-<img src="img/pullReq.png" alt="Pull Request" width=600 style="border-radius: 10px">
+<img src="img/pullReq.png" alt="Pull Request" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Then you will come to "PR section", from here you can generate your PR using the "New Pull Request" button at the top right of this section as shown in here.
 </div>
-<img src="img/newPR.png" alt="New Pull Request" width=600 style="border-radius: 10px">
+<img src="img/newPR.png" alt="New Pull Request" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 You will be greeted with the file that you are about to send along with your PR to be merged into the main, review the file and make sure that it is as you intended it to be, like my file has my added feature line in it as shown here:
 </div>
-<img src="img/createPR.png" alt="New Pull Request" width=600 style="border-radius: 10px">
+<img src="img/createPR.png" alt="New Pull Request" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Then click on the "Create Pull Request" button at the top right of this section and you will be taken to the final configuration for your PR. Here you will select a title (first highlight), then provide a description (second highlight) and finally click on "Create Pull Request" (third highlight) at the bottom of this page. This will finalise and submit your PR for your team to review before you can merge.
 </div>
-<img src="img/prSetup.png" alt="New Pull Request" width=600 style="border-radius: 10px">
+<img src="img/prSetup.png" alt="New Pull Request" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Now go back to "Pull Requests" tab and you will see your PR waiting there, click it to open it and check the current status of our PR. If you are working with an actual team in a collaborative Repo, you will see something like this in your PR:
 </div>
-<img src="img/mergeBlock.png" alt="Merge Block" width=600 style="border-radius: 10px">
+<img src="img/mergeBlock.png" alt="Merge Block" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Merging will be blocked until a specified number of people from your team have approved your PR. For now, this is my own repo so I have set the number of required approvals to 1 and then I asked one of my amazing friends to volunteer as a reviewer for my PR. So I invited my friend "Velanora" as a collaborator in my Demo Repo. Let's add her as a reviewer on this PR so she can review and approve it for us which will allow us to merge our feature branch into main branch then. We can add her as a reviewer by selecting her from the "Reviewer's Menu" like this:
 </div>
-<img src="img/reviewerMenu.png" alt="Reviewer Menu" width=600 style="border-radius: 10px">
+<img src="img/reviewerMenu.png" alt="Reviewer Menu" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 After we select a reviewer by clicking on them, we can save them by clicking outside the reviewer's menu. Our Reviewer will receive a notification from GitHub telling them about their required approval in our PR. Then we will have to wait for them to review our PR. We can see that our reviewer has approved our PR or not by a symbol next to their name in Reviewer list on the right side. If the symbol is a yellow dot, they have not approved our PR, if the symbol is a blue/green tick, they have approved the PR.
 </div>
-<img src="img/pendingApproval.png" alt="Pending Approval" width=600 style="border-radius: 10px">
+<img src="img/pendingApproval.png" alt="Pending Approval" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 After reviewing, our reviewer can either request changes or they can approve it depending on the requirement of the project. If they request changes, we will still be barred from merging then, but if they approve our PR, yellow dot will be replaced with a blue/green tick and we will be allowed to merge.
 </div>
-<img src="img/prApproved.png" alt="Approved PR" width=600 style="border-radius: 10px">
+<img src="img/prApproved.png" alt="Approved PR" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Once our PR has gotten the required amount of approvals, we can go back to our PR and we will see that our merge option has been unlocked. If everything has gone accordingly, our PR should have an unlocked merge option like this:
 </div>
-<img src="img/mergeUnlocked.png" alt="Merge Unlocked" width=600 style="border-radius: 10px">
+<img src="img/mergeUnlocked.png" alt="Merge Unlocked" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
-Now let's merge our PR by clicking on the "Merger Pull Request" button at the bottom, a dialogue box will appear where we have to provide a commit message, a description if we want and finally click the "Merge Pull Request" button like this one:
+Now let's merge our PR by clicking on the "Merge Pull Request" button at the bottom, a dialogue box will appear where we have to provide a commit message, a description if we want and finally click the "Merge Pull Request" button like this one:
 </div>
-<img src="img/mergePR.png" alt="Merge Pull Request" width=600 style="border-radius: 10px">
+<img src="img/mergePR.png" alt="Merge Pull Request" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Then finally our PR will be merged into main and you will see this appear at the bottom of your PR:
 </div>
-<img src="img/prMerged.png" alt="Merge Pull Request" width=600 style="border-radius: 10px">
+<img src="img/prMerged.png" alt="Merge Pull Request" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Now it is a convention to delete a branch after it has merged into main and completed the task it was supposed to do, but before deleting it let's see that our changes have safely merged into our main branch by going to main branch on GitHub.
 </div>
-<img src="img/updatedMain.png" alt="Main Updated" width=600 style="border-radius: 10px">
+<img src="img/updatedMain.png" alt="Main Updated" width="600" style="border-radius: 10px">
 
 ### Delete Feature Branch
 <div style="text-align: justify">
@@ -403,7 +403,7 @@ git branch
 ```
 You will see that your feature branch is deleted in your local repo. Similarly you can verify the deletion of your remote feature branch by going to the branch switch menu of your repo on GitHub:
 </div>
-<img src="img/featureDeleted.png" alt="feature branch deleted" width=600 style="border-radius: 10px">
+<img src="img/featureDeleted.png" alt="feature branch deleted" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Congratulations! you have learnt how to create a feature branch, add a feature to your project, merge your branch using either git commands on your personal solo repo and by opening a PR on a collaborative repo. Then you also learnt how to delete your feature branch. Now you should take a break and practice all these concepts to let them sink in.
 </div>
@@ -417,7 +417,7 @@ git clone TargetRepoURL
 ```
 You can find the repo's URL on GitHub in the blue/green "Code Menu" when you open that repo, for example let's say we want to clone the Demo Repo we have been working on, then we would copy the given URL from the Repo on GitHub and replace the "TargetRepoURL" with it:
 </div>
-<img src="img/repoURL.png" alt="Cloning" width=600 style="border-radius: 10px">
+<img src="img/repoURL.png" alt="Cloning" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 This command would clone the repo and then you can enter the local clone repo using:
 
@@ -492,7 +492,7 @@ git push origin remove-feature
 ```
 Normally "git revert CommitHash" would have also worked, but sometime you will get an error regarding an editor called "vi" which might not be installed in your system, so to bypass that error we use the "no-edit" flag. Now the test.cpp in the remove-feature branch of our repo has been restored to its original form where the feature did not exist.
 </div>
-<img src="img/featureReverted.png" alt="Feature Reverted" width=600 style="border-radius: 10px">
+<img src="img/featureReverted.png" alt="Feature Reverted" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Now let's merge our remove-feature into our main to restore the original code as well:
 
@@ -532,7 +532,7 @@ Date:   Sun Jun 14 18:07:58 2026 +0500
 ```
 As you can see that the latest commit says (Revert "feat: Added Feature"). You can also verify the feature removal by going to remote repo's main:
 </div>
-<img src="img/mainReverted.png" alt="Main Reverted" width=600 style="border-radius: 10px">
+<img src="img/mainReverted.png" alt="Main Reverted" width="600" style="border-radius: 10px">
 
 ### Cleanup
 <div style="text-align: justify">
@@ -578,7 +578,7 @@ git push origin main
 git branch -d feature-1
 git push origin -d feature-1
 ```
-By now, first feature has been added and feature-1 has been deleted from local and remote repo. Let's add second feature by making feature-2 branch:Now since we are already on main and we know that our local's main is updated with remote's main, we will skip the "git switch main" and "git pull origin main" command. This is important to know which command does what and whether we need to run it or not:
+By now, first feature has been added and feature-1 has been deleted from local and remote repo. Let's add second feature by making feature-2 branch. Now since we are already on main and we know that our local's main is updated with remote's main, we will skip the "git switch main" and "git pull origin main" command. This is important to know which command does what and whether we need to run it or not:
 
 ```bash
 git switch -c feature-2
@@ -740,7 +740,7 @@ Date:   Sun Jun 14 18:07:58 2026 +0500
 ```
 As you can see, latest commit is First Feature now and successive commits have been removed. You can also verify the change in you remote repo's main.
 </div>
-<img src="img/restore2Feature1.png" alt="Restore to Feature 1" width=600 style="border-radius: 10px">
+<img src="img/restore2Feature1.png" alt="Restore to Feature 1" width="600" style="border-radius: 10px">
 
 ### Cleanup
 <div style="text-align: justify">
@@ -826,23 +826,23 @@ git push origin branch-1
 ```
 Let's perform the merge process by first opening a PR for each branch. Let's revise the GitHub merge method while doing this. First we need to go to GitHub. Now we will see an option for both branch's pull request on the main page right now, if they don't appear then we can open PR's by going to PR tab as well. Since we have already learnt how to do that before, you can use that method as well. I will directly click the following button for now:
 </div>
-<img src="img/branch1PR.png" alt="Branch One PR" width=600 style="border-radius: 10px">
+<img src="img/branch1PR.png" alt="Branch One PR" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Then add a description if you want and click the "Create Pull Request" button to submit a PR for branch-1's merge and PR will be generated. You will notice that everything is normal and PR is allowed to merge withouth any problems.
 </div>
-<img src="img/branch1PROpen.png" alt="Branch One PR Open" width=600 style="border-radius: 10px">
+<img src="img/branch1PROpen.png" alt="Branch One PR Open" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Now go to main page of your repo and do the same process for branch-2's PR submission. Also, since I haven't applied any security checks in my personal repo to PRs, I am getting this dialogue box:
 </div>
-<img src="img/PRsecurityCheck.png" alt="PR Security Check" width=600 style="border-radius: 10px">
+<img src="img/PRsecurityCheck.png" alt="PR Security Check" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 If you are getting this too in your personal repo, just ignore it right now because in a professional repo with a team, security checks will be applied and this box wont appear. For now, just perform the same PR opening process for branch-2 yourself like I did for branch-1. When you have successfully opened a PR for branch-2 just merge it right there using the Merge button at the bottom.
 </div>
-<img src="img/branch2Merge.png" alt="Branch 2 Merge" width=600 style="border-radius: 10px">
+<img src="img/branch2Merge.png" alt="Branch 2 Merge" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 You will notice that branch-2 safely merged and everything is normal up until this point, but now if you go to PR tab and open the PR of branch-1, you will see this:
 </div>
-<img src="img/mergeConflict.png" alt="Merge Conflict" width=600 style="border-radius: 10px">
+<img src="img/mergeConflict.png" alt="Merge Conflict" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 That is a "Merge Conflict", this happened because branch-2 that just merged into main, edited the same line 5 in test.cpp that our branch-1 has changed. Now GitHub is telling us about this conflict by showing us "Merge Conflict". You can also see that our merging has also been locked. Merging wont open again until merge conflict has been resolved. Let's learn how to resolve this.
 </div>
@@ -851,31 +851,31 @@ That is a "Merge Conflict", this happened because branch-2 that just merged into
 <div style="text-align: justify">
 We can resolve the merge conflict directly on GitHub. Let's start. First click on this "Merge Conflicts" warning at the top right:
 </div>
-<img src="img/conflictWarning.png" alt="Conflict Warning" width=600 style="border-radius: 10px">
+<img src="img/conflictWarning.png" alt="Conflict Warning" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 This will open this side panel in which you have to click this "Resolve Conflicts" button:
 </div>
-<img src="img/resolveConflict.png" alt="Resolve Conflict" width=600 style="border-radius: 10px">
+<img src="img/resolveConflict.png" alt="Resolve Conflict" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Finally you will be greeted with the file having the merge conflict, GitHub will show you the changes made by your predecessor and the changes made by you as well separately. Along with that, it will also give you the option to keep your changes and discard the predecessor's, keep predecessor's changes and discard yours, or even keep both the changes. You can select whichever is needed depending on the scenario. This is the part where team communication comes in, such a scenario shall be discussed with team and only then should such a decision be taken.
 </div>
-<img src="img/acceptChanges.png" alt="Accept Changes" width=600 style="border-radius: 10px">
+<img src="img/acceptChanges.png" alt="Accept Changes" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 For now, I will keep both changes. For this, I will click the third option:
 </div>
-<img src="img/acceptBoth.png" alt="Accept Both Changes" width=600 style="border-radius: 10px">
+<img src="img/acceptBoth.png" alt="Accept Both Changes" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Also in the case of accepting both changes, you might notice that GitHub puts your changes first and then your predecessor's. So review the file to make sure if that is the order your file requires. In a code file, an error in the sequence of the statements can cause unwanted behaviour. So double check the sequence and then click the "Mark as resolved" button at the top right:
 </div>
-<img src="img/conflictResolved.png" alt="Conflict Resolved" width=600 style="border-radius: 10px">
+<img src="img/conflictResolved.png" alt="Conflict Resolved" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Then you have to click the "Commit Merge" button to update your PR:
 </div>
-<img src="img/commitMerge.png" alt="Commit Merge" width=600 style="border-radius: 10px">
+<img src="img/commitMerge.png" alt="Commit Merge" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 You will now see that your PR doesn't have the merge conflict warning anymore and it says ready to merge, and if have attained the number of required reviews then your merge option shall also be unlocked now:
 </div>
-<img src="img/readyToMerge.png" alt="Ready To Merge" width=600 style="border-radius: 10px">
+<img src="img/readyToMerge.png" alt="Ready To Merge" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Merge your PR by using the merge PR option at the bottom, you will see that your PR has successfully been merged into the main, you can verify this by going to main if you want.
 </div>
@@ -894,15 +894,15 @@ git push origin -d branch-2
 ```
 Your can run git branch to verify the cleanup if you want. Congratulation! you have learnt what merge conflicts are, how they form and how you can fix them. We are officially done with our git and GitHub guide so let's delete our Demo repo and mark an end to this journey. You can delete a Repo by going to the "Settings" tab  on GitHub.
 </div>
-<img src="img/settings.png" alt="Setting Tab" width=600 style="border-radius: 10px">
+<img src="img/settings.png" alt="Setting Tab" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Then scroll to the bottom of the page and you will see a "Delete This Repository" button, click it:
 </div>
-<img src="img/deleteRepo.png" alt="Delete Repo" width=600 style="border-radius: 10px">
+<img src="img/deleteRepo.png" alt="Delete Repo" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 It will ask you to confirm that you want to delete the Repo. If you don't need the repo and are sure to delete it, confirm it. It might ask you to retype the Repo name, so just copy it from the above and paste it below:
 </div>
-<img src="img/confirmDeletion.png" alt="Confirm Deletion" width=600 style="border-radius: 10px">
+<img src="img/confirmDeletion.png" alt="Confirm Deletion" width="600" style="border-radius: 10px">
 <div style="text-align: justify">
 Now normally you would be sent a code to your email which you need to enter here and delete the repo, but if someone has setup the "GitHub Mobile App" then you will see a "Number" on your system's screen, and now you need to open the app and enter that "Number". Either way, Repo will be deleted.
 </div>
@@ -927,5 +927,5 @@ With these skills, you have developed all the ability to handle a project using 
 
 ## Credits
 <div style="text-align: justify">
-I would like to say thanks to my friend "Velanora" for her help during the making of this guide, as her help allowed to tackle a really complex topic of git and GitHub which is merging PRs. So credits to her and also, she herself is a blog writer and documents her learning journey so you can checkout her blogs at "<a target="_blank" href="https://velanora.GitHub.io">Velanora Blogs</a>".
+I would like to say thanks to my friend "Velanora" for her help during the making of this guide, as her help allowed to tackle a really complex topic of git and GitHub which is merging PRs. So credits to her and also, she herself is a blog writer and documents her learning journey so you can checkout her blogs at "<a target="_blank" href="https://velanora.github.io">Velanora Blogs</a>".
 </div>
