@@ -686,11 +686,13 @@ Now let's make another branch to start our retoration safely, let's name this br
 git switch -c restore-branch
 ```
 Now we have to restore our project for First Feature on this branch and then update main branch using this branch as reference. We can do this by first restoring the code on our restore-branch by using the following command with First Feature's commit hash:
+> [!WARNING]
+> **Data Loss:** The upcoming command contains a "hard" flag, which is a destructive flag. It completely wipes out files in your local directory. Make sure you don't have uncommited, important code lying around before running this next command!
 
 ```bash
 git reset --hard fe312a3b08b8d16a3ac6a110a987d8a0ef307a0c
 ```
-What this will do? this will make the test.cpp on your restore-branch to the exact state as when First Feature was added, --hard flag is the thing responsible for restoring the physical file to this point, if you use --soft flag then your file would be staged as First Feature commit, but the physical code would not have been lost in your code editor. Anyways, --hard resets the file to that commit. You can verify this by the absence of Second and Third Features in your test.cpp file. Now we just need to update main using this restore-branch. We can do that by running the following commands:
+What this will do? this will make the test.cpp on your restore-branch to the exact state as when First Feature was added, "hard" flag is the thing responsible for restoring the physical file to this point, if you use "soft" flag then your file would be staged as First Feature commit, but the physical code would not have been lost in your code editor. Anyways, "hard" resets the file to that commit. You can verify this by the absence of Second and Third Features in your test.cpp file in your code editor. Now we just need to update main using this restore-branch. We can do that by running the following commands:
 
 ```bash
 git push origin restore-branch --force
@@ -746,4 +748,9 @@ git branch -d restore-branch
 git push origin -d restore-branch
 ```
 There we go, project restored to intended point and all cleaned up. Again, I would recommend to take a break here and practice what you have learnt in Basic and Advanced Version Control to get a good understanding of it. After that, we will move onto our last topic of this git & github guide, which is "Merge Conflicts".
+</div>
+
+## Merge Conflict
+<div style="text-align: justify">
+
 </div>
