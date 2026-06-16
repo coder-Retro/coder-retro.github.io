@@ -745,5 +745,5 @@ Now that we have verified the restoration, let's perform the cleanup by deleting
 git branch -d restore-branch
 git push origin -d restore-branch
 ```
-There we go, project restored to intended point and all cleaned up.
+There we go, project restored to intended point and all cleaned up. Again, I would recommend to take a break here and practice what you have learnt in Basic and Advanced Version Control to get a good understanding of it. After that, we will move onto our last topic of this git & github guide, which is "Merge Conflicts".
 </div>
