@@ -534,7 +534,7 @@ As you can see that the latest commit says (Revert "feat: Added Feature"). You c
 </div>
 <img src="img/mainReverted.png" alt="Main Reverted" width=600 style="border-radius: 10px">
 
-#### Cleanup
+### Cleanup
 <div style="text-align: justify">
 As we can see that our feature has been reverted all over our project and initial form of code has been restored. Now all we have left to do is to delete our remove-feature branch to cleanup. Let's revise the branch deletion process by running the following commands:
 
@@ -630,6 +630,120 @@ git log
 And we will be greeted with the history of commits of our project. Let's look for the First Feature commit by searching through the commits using commit messages as a key. We are looking for a message that says "Add: First Feature".
 
 ```bash
+commit f3e2cd94b60ff4845dd3c80851a0f2ce6f6dd55f
+(HEAD -> main, origin/main, origin/HEAD)
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Tue Jun 16 19:33:09 2026 +0500
 
+    Add: Third Feature
+
+commit a65d42aad6606b6c8aaae3d649ec45735f76ad4c
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Tue Jun 16 19:31:42 2026 +0500
+
+    Add: Second Feature
+
+commit fe312a3b08b8d16a3ac6a110a987d8a0ef307a0c
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Tue Jun 16 19:29:53 2026 +0500
+
+    Add: First Feature
+
+commit 69a0bcc56c2173ab9e01ad92fcc1fe7f872adb3d
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sun Jun 14 21:53:54 2026 +0500
+
+    Revert "feat: Added Feature"
+    
+    This reverts commit 6998eaa85661853059f2bd76249662a63df64ce8.
+
+commit 6998eaa85661853059f2bd76249662a63df64ce8
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sun Jun 14 18:14:56 2026 +0500
+
+    feat: Added Feature
+
+commit a502c4a53ae37f001db0555b325fd3339f5db4bf
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sun Jun 14 18:12:00 2026 +0500
+
+    Add: .vscode to gitignore
+
+commit 08964f140eee9b70a2f462094fd5947eb933d820
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sun Jun 14 18:07:58 2026 +0500
+
+    Any Message
 ```
+There it is, the commit message "Add: First Feature". We will now copy its commit hash. Now after that, we need to start restoration to this commit hash.
+</div>
+
+### Restoration
+<div style="text-align: justify">
+Now let's make another branch to start our retoration safely, let's name this branch as "restore-branch":
+
+```bash
+git switch -c restore-branch
+```
+Now we have to restore our project for First Feature on this branch and then update main branch using this branch as reference. We can do this by first restoring the code on our restore-branch by using the following command with First Feature's commit hash:
+
+```bash
+git reset --hard fe312a3b08b8d16a3ac6a110a987d8a0ef307a0c
+```
+What this will do? this will make the test.cpp on your restore-branch to the exact state as when First Feature was added, --hard flag is the thing responsible for restoring the physical file to this point, if you use --soft flag then your file would be staged as First Feature commit, but the physical code would not have been lost in your code editor. Anyways, --hard resets the file to that commit. You can verify this by the absence of Second and Third Features in your test.cpp file. Now we just need to update main using this restore-branch. We can do that by running the following commands:
+
+```bash
+git push origin restore-branch --force
+git switch main
+git reset --hard restore-branch
+git push origin main --force
+```
+The first command, you already know what it does but that "force" flag is new for you right? Well github has a simple rule called the forward-movement principle. It only expects the user to move forward by keeping all the previous commits and adding new ones ahead of it. But here, we just restored the restore-branch to an older commit which removed the successive commits (Second Feature & Third Feature), now if we push to github, this will be a backward-movement which github sees as a mistake by the user. So by adding "force" flag, we are telling github that "I know what I am doing so just listen to me and do it". This allows github to know that this backward-movement is intensional and not a mistake so github breaks its forward-movement principle and allows us to go back to an old point and remove the successive commits ahead of that point. It will also remove the Second Feature and Third Feature's commits from our project's git log history as well. That's what the "force" flag does. The second command then switches to main as you know already. The third command updated the local's main to local's restore branch. The fourth command then updates remote's main using local's main, and "force" flag is again used for the same reason here. Now let's run git log to check the history:
+
+```bash
+commit fe312a3b08b8d16a3ac6a110a987d8a0ef307a0c
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Tue Jun 16 19:29:53 2026 +0500
+
+    Add: First Feature
+
+commit 69a0bcc56c2173ab9e01ad92fcc1fe7f872adb3d
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sun Jun 14 21:53:54 2026 +0500
+
+    Revert "feat: Added Feature"
+    
+    This reverts commit 6998eaa85661853059f2bd76249662a63df64ce8.
+
+commit 6998eaa85661853059f2bd76249662a63df64ce8
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sun Jun 14 18:14:56 2026 +0500
+
+    feat: Added Feature
+
+commit a502c4a53ae37f001db0555b325fd3339f5db4bf
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sun Jun 14 18:12:00 2026 +0500
+
+    Add: .vscode to gitignore
+
+commit 08964f140eee9b70a2f462094fd5947eb933d820
+Author: coder-Retro <hasnainqadri9c@gmail.com>
+Date:   Sun Jun 14 18:07:58 2026 +0500
+
+    Any Message
+```
+As you can see, lastest commit is First Feature now and successive commits have been removed. You can also verify the change in you remote repo's main.
+</div>
+<img src="img/restore2Feature1.png" alt="Restore to Feature 1" width=600 style="border-radius: 10px">
+
+### Cleanup
+<div style="text-align: justify">
+Now that we have verified the restoration, let's perform the cleanup by deleting our restore branch from both local and remote repo. Again, I will skip the "git switch main" and "git pull origin main" because I am already on main branch so dont need to switch, and also main hasnt been changed after the last update to dont need to pull from remote's main:
+
+```bash
+git branch -d restore-branch
+git push origin -d restore-branch
+```
+There we go, project restored to intended point and all cleaned up.
 </div>
