@@ -695,7 +695,7 @@ git reset --hard fe312a3b08b8d16a3ac6a110a987d8a0ef307a0c
 What this will do? this will make the test.cpp on your restore-branch to the exact state as when First Feature was added, "hard" flag is the thing responsible for restoring the physical file to this point, if you use "soft" flag then your file would be staged as First Feature commit, but the physical code would not have been lost in your code editor. Anyways, "hard" resets the file to that commit. You can verify this by the absence of Second and Third Features in your test.cpp file in your code editor. Now we just need to update main using this restore-branch. We can do that by running the following commands:
 
 > [!WARNING]
-> **History Rewriting:** The upcoming commands contain a "force" flag which is capable of altering the remote repo's history of commits made in the project, so before using this flag make sure that you dont lose any neccessary data in your project's history log which might be needed later.
+> **History Rewriting:** The upcoming commands contain a "force" flag which is capable of altering the remote repo's history of commits made in the project, so before using this flag make sure that you dont lose any neccessary data in your project's history log which might be needed later. Also, it is not preferred to use this flag in a shared repo with a team because it breaks their commit history as well.
 
 ```bash
 git push origin restore-branch --force
