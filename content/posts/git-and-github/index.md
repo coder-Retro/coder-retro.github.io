@@ -362,11 +362,11 @@ Merging will be blocked until a specified number of people from your team have a
 </div>
 <img src="img/reviewerMenu.png" alt="Reviewer Menu" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
-After we select a reviewer by clicking on them, we can save them by clicking outside the reviewer's menu. Our Reviewer will receive a notification from github telling them about their required approval in our PR. Then we will have to wait for them to review our PR. We can see that our reviewer has approved our PR or not by a symbol next to their name in Reviwer list on the right side. If the symbol is a yellow dot, they have not approved our PR, if the symbol is a blue tick, they have approved the PR.
+After we select a reviewer by clicking on them, we can save them by clicking outside the reviewer's menu. Our Reviewer will receive a notification from github telling them about their required approval in our PR. Then we will have to wait for them to review our PR. We can see that our reviewer has approved our PR or not by a symbol next to their name in Reviwer list on the right side. If the symbol is a yellow dot, they have not approved our PR, if the symbol is a blue/green tick, they have approved the PR.
 </div>
 <img src="img/pendingApproval.png" alt="Pending Approval" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
-After reviewing, our reviewer can either request changes or they can approve it depending on the requirement of the project. If they request changes, we will still be barred from merging then, but if they approve our PR, yellow dot will be replaced with a blue tick and we will be allowed to merge.
+After reviewing, our reviewer can either request changes or they can approve it depending on the requirement of the project. If they request changes, we will still be barred from merging then, but if they approve our PR, yellow dot will be replaced with a blue/green tick and we will be allowed to merge.
 </div>
 <img src="img/prApproved.png" alt="Approved PR" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
@@ -415,7 +415,7 @@ Now that we know how to make a repo from scratch, let's try working on a github 
 ```bash
 git clone TargetRepoURL
 ```
-You can find the repo's URL on github in the "Blue Code Menu" when you open that repo, for example let's say we want to clone the Demo Repo we have been working on, then we would copy the given URL from the Repo on github and replace the "TargetRepoURL" with it:
+You can find the repo's URL on github in the blue/green "Code Menu" when you open that repo, for example let's say we want to clone the Demo Repo we have been working on, then we would copy the given URL from the Repo on github and replace the "TargetRepoURL" with it:
 </div>
 <img src="img/repoURL.png" alt="Cloning" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
@@ -427,7 +427,7 @@ cd TargetRepoName
 However, do know that the repo might be owned by someone else and they might not have given you the rights to push anything to the remote repo like a collaborator could do. So you can play around with the local repo, but not the remote version of this cloned repo. Other than that, making branches and merging into main in your local repo is all the same as studied before. So now you know how to make a repo from scratch as well as how to clone a built one. Now we can move onto the actual core concepts of git and github, basically the version control part of it, that allows us to track the changes made to files in our project and also to load old checkpoints if needed.
 </div>
 
-## Version Control
+## Basic Version Control
 <div style="text-align: justify">
 Version control as discussed before, allows us to go to different points in the history of our project's evolution. How to do this now. Lets say that we want to remove the feature that we added using our feature branch into test.cpp. We can use version control capability of git to revert the commit in which we added the feature. Let's learn how to do this. For this, we will need the commit hash of that version. How to find that ? We run a simple command:
 
@@ -490,7 +490,7 @@ Not let's use our copied commit hash to revert the feature. For this, we need to
 git revert --no-edit 6998eaa85661853059f2bd76249662a63df64ce8
 git push origin remove-feature
 ```
-Normally "git revert CommitHash" would have also worked, but sometime you will get an error regarding and editor called "vi" which might not be installed in your system, so to bypass that error we use the "--no-edit" flag. Now the test.cpp in the remove-feature branch of our repo has been restored to its original form where the feature did not exist.
+Normally "git revert CommitHash" would have also worked, but sometime you will get an error regarding an editor called "vi" which might not be installed in your system, so to bypass that error we use the "no-edit" flag. Now the test.cpp in the remove-feature branch of our repo has been restored to its original form where the feature did not exist.
 </div>
 <img src="img/featureReverted.png" alt="Feature Reverted" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
@@ -530,7 +530,7 @@ Date:   Sun Jun 14 18:07:58 2026 +0500
 
     Any Message
 ```
-You can also verify the feature removal by going to remote repo's main:
+As you can see that the latest commit says (Revert "feat: Added Feature"). You can also verify the feature removal by going to remote repo's main:
 </div>
 <img src="img/mainReverted.png" alt="Main Reverted" width=600 style="border-radius: 10px">
 
@@ -545,4 +545,91 @@ git branch -d remove-feature
 git push origin -d remove-feature
 ```
 We already know what each of these commands do step by step. Congratulations on reverting your feature and restoring an older version of your project. This is one of the most important and amazing powers a developer can desire to have and that is exactly what git and github deliver.
+</div>
+
+## Advanced Version Control
+<div style="text-align: justify">
+That was not much to revert a single commit and restore the code. However, lets learn how to undo multiple commits that were made after a certain point. For this, we will add 3 features using 3 branches. We will use separate names for these branches (i.e feature-1, feature-2 and feature-3). Then we will restore the code to the point where only the feature of feature-1 was added and remove features added by feature-2 and feature-3. Let's make these branches and add the features first.
+
+```bash
+git switch main
+git pull origin main
+git switch -c feature-1
+```
+Then add the feature in your cpp using feature-1:
+
+```cpp
+#include<iostream>
+int main(){
+    std::cout << "This is my Demo Project";
+    std::cout << "\nThis is Feature 1";
+    return 0;
+}
+```
+Now save it, push it onto remote's feature-1, then merge it into main and delete your feature-1 using:
+
+```bash
+git add test.cpp
+git commit -m "Add: First Feature"
+git push origin feature-1
+git switch main
+git merge feature-1
+git push origin main
+git branch -d feature-1
+git push origin -d feature-1
+```
+By now, first feature has been added and feature-1 has been deleted from local and remote repo. Let's add second feature by making feature-2 branch:Now since we are already on main and we know that our local's main is updated with remote's main, we will skip the "git switch main" and "git pull origin main" command. This is important to know which command does what and whether we need to run it or not:
+
+```bash
+git switch -c feature-2
+```
+Then add the second feature to your test.cpp like:
+
+```cpp
+#include<iostream>
+int main(){
+    std::cout << "This is my Demo Project";
+    std::cout << "\nThis is Feature 1";
+    std::cout << "\nThis is Feature 2";
+    return 0;
+}
+```
+Now save test.cpp and repeat the same push and merge process for feature-2 as well:
+
+```bash
+git add test.cpp
+git commit -m "Add: Second Feature"
+git push origin feature-2
+git switch main
+git merge feature-2
+git branch -d feature-2
+git push origin -d feature-2
+```
+I have demonstrated the process two times for First and Second feature. Now add the Third Feature using feature-3 branch yourself. By the end, we will be on our main branch, all feature branches will be deleted and your test.cpp will look like this:
+
+```cpp
+#include<iostream>
+int main(){
+    std::cout << "This is my Demo Project";
+    std::cout << "\nThis is Feature 1";
+    std::cout << "\nThis is Feature 2";
+    std::cout << "\nThis is Feature 3";
+    return 0;
+}
+```
+So we added three features using 3 feature branches, now we need to learn how to remove everything added to our project ahead of a certain point. For now, let's set this point as First Feature, which means that we will restore the project to the point where First Feature was added and anything added after that (Second Feature and Third Feature) will be removed. This is gonna be different than reverting, where reverting only undid a single commit, this will undo all the commits made after "Add: First Feature", therefore the successive "Add: Second Feature" & "Add: Third Feature" commits will be undone. Let's get down to it then. 
+</div>
+
+### Retrieve CommitHash
+<div style="text-align: justify">
+In order to restore our project to a certain point, we will need the commit hash of that point. We already know how we can get the commit hash using git log. Now since we need the commit hash of First Feature, we will need to search for the First Feature commit in the git log's history. But since we have been using clean commit messages for each commit, we will be able to locate First Feature's commit in no time. Let's open the project's commit history using:
+
+```bash
+git log
+```
+And we will be greeted with the history of commits of our project. Let's look for the First Feature commit by searching through the commits using commit messages as a key. We are looking for a message that says "Add: First Feature".
+
+```bash
+
+```
 </div>
