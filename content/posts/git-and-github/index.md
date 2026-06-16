@@ -36,23 +36,23 @@ After this, you can also verify the git installation using the following command
 ```bash
 git --version
 ```
-This command will show your installed version of git, this shows that git has been properly installed in your system and you are ready to move on with it. Now that we are done with installation of git, let's start with orientaion of GitHub aswell to learn these tools in parallel and get the best out of them.
+This command will show your installed version of git, this shows that git has been properly installed in your system and you are ready to move on with it. Now that we are done with installation of git, let's start with orientation of GitHub as well to learn these tools in parallel and get the best out of them.
 </div>
 
 ## Introduction To GitHub
 <div style="text-align: justify">
-GitHub is basically a website that you can use in combination with git, this site allows you to have a cloud based management system for your projects. It also provides a more GUI approach towards git itself aswell. Where git manages your project locally, GitHub manages it remotely. Basically when you use git and GitHub together, your project is saved in two forms. These two forms are:
+GitHub is basically a website that you can use in combination with git, this site allows you to have a cloud based management system for your projects. It also provides a more GUI approach towards git itself as well. Where git manages your project locally, GitHub manages it remotely. Basically when you use git and GitHub together, your project is saved in two forms. These two forms are:
 <ul>
 <li>Local (On Your System)</li>
 <li>Remote (On Your GitHub)</li>
 </ul>
-Ideally, you should keep both of these in sync so that your project stays updated and there are no gaps between you local data and remote data. Also, git and GitHub manage your project using Repositories. Repository is just a fancy name for a folder in GitHub terminology. In short, a repository is also called a "Repo". So you have a Local Repo and a Remote Repo.
+Ideally, you should keep both of these in sync so that your project stays updated and there are no gaps between your local data and remote data. Also, git and GitHub manage your project using Repositories. Repository is just a fancy name for a folder in GitHub terminology. In short, a repository is also called a "Repo". So you have a Local Repo and a Remote Repo.
 </div>
 <img src="img/GitHubLogo.png" alt="GitHub Logo" width=600 style="border-radius: 10px">
 
 ### GitHub Setup
 <div style="text-align: justify">
-Now that we have already installed git, let's setup our GitHub so that we can get into learning them both. First you need to make an account on GitHub by going to the official GitHub site at "<a target="_blank" href="https://github.com">GitHub Site</a>". Now you can make a GitHub account by entering your email and clicking "Sign up for GitHub" button, then you will need to verify your account using your email and the account will be created. Or if you already have a google account, you can use that to sign in aswell using the sign in option at the top right of this webpage as shown here.
+Now that we have already installed git, let's setup our GitHub so that we can get into learning them both. First you need to make an account on GitHub by going to the official GitHub site at "<a target="_blank" href="https://github.com">GitHub Site</a>". Now you can make a GitHub account by entering your email and clicking "Sign up for GitHub" button, then you will need to verify your account using your email and the account will be created. Or if you already have a Google account, you can use that to sign-in as well using the sign-in option at the top right of this webpage as shown here.
 </div>
 <img src="img/GitHubSignIn.png" alt="GitHub Sign In" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
@@ -61,11 +61,11 @@ Since I already have a google account, I will login using that account and then 
 
 ### GitHub GUI
 <div style="text-align: justify">
-When you sign in your GitHub's interface might look quite empty as compared to mine. That is because your account is new and your haven't added much to it yet where as mine has been in use for quite a while now. Anyways, let's familiarize with GitHub's GUI. Here is an image of my GitHub's home page.
+When you sign in your GitHub's interface might look quite empty as compared to mine. That is because your account is new and you haven't added much to it yet whereas mine has been in use for quite a while now. Anyways, let's familiarize with GitHub's GUI. Here is an image of my GitHub's home page.
 </div>
 <img src="img/GitHubGUI.png" alt="GitHub Interface" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
-If you take a look at that list on the left side of my GitHub's home page, these are my remote repositories that are managed by GitHub. Even this blogsite that you are looking at right now, its code is being maintained using git and GitHub, as you can see by looking at the bottom-most repo. So any repos that you will make are going to appear in this column later on. Then there is the "News/Updates" Section in the middle of the page which shows the latest updates of any activity on GitHub. That should be all for the home interface for now. Let's configuring git.
+If you take a look at that list on the left side of my GitHub's home page, these are my remote repositories that are managed by GitHub. Even this blogsite that you are looking at right now, its code is being maintained using git and GitHub, as you can see by looking at the bottom-most repo. So any repos that you will make are going to appear in this column later on. Then there is the "News/Updates" Section in the middle of the page which shows the latest updates of any activity on GitHub. That should be all for the home interface for now. Let's start configuring git.
 </div>
 
 ## Git Configuration
@@ -115,7 +115,7 @@ By now, we are inside our project folder, now we need to turn this folder into a
 git init
 git branch -M main
 ```
-What this does is that it turns the current folder into a local repo and the second command renames your current branch to "main", by default it's named as master. We will learn what a branch is when we get there, for now just let is slide and don't sweat it. Git starts monitoring any files in this folder (Local Repo) from now on. Hence, git is active and in action now.
+What this does is that it turns the current folder into a local repo and the second command renames your current branch to "main", by default it's named as master. We will learn what a branch is when we get there, for now just let it slide and don't sweat it. Git starts monitoring any files in this folder (Local Repo) from now on. Hence, git is active and in action now.
 </div>
 
 ### Remote Repo
@@ -147,7 +147,7 @@ This command connects our local repo to the remote repo and allows the communica
 
 ### Add Files to Local Repo
 <div style="text-align: justify">
-Let's create a simple cpp file in our local repo and then try to save it to our remote repo as well. Let's creat a simple test.cpp in our local repo:
+Let's create a simple cpp file in our local repo and then try to save it to our remote repo as well. Let's create a simple test.cpp in our local repo:
 
 ```cpp
 #include<iostream>
@@ -200,7 +200,7 @@ Now let's save this file onto our remote repo as well using the following two co
 git commit -m "Any Message"
 git push origin main
 ```
-The first command create a snap shot of your current added file. Then the second command sends that snap shot to the main branch in your remote repo.
+The first command creates a snapshot of your current added file. Then the second command sends that snap shot to the main branch in your remote repo.
 </div>
 
 #### GitHub Authentication
@@ -244,12 +244,12 @@ The first command tells Git to safely drop .vscode/ from its tracking registry w
 </div>
 <img src="img/gitignore.png" alt="added gitignore" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
-Just now, we pushed our code directly to main branch in the repo, for now it's ok since we are learning git and GitHub as beginners but later on we will learn how it is not recommended to push directly to main branch. In order to understand this, we need to learn what branches are and how to use them. But before moving on to that, I recommend taking a break and practice all that you have learnt up until now to let it sink in. When you have developed a good grasp on it, continue to branches.
+Just now, we pushed our code directly to main branch in the repo, for now it's okay since we are learning git and GitHub as beginners but later on we will learn how it is not recommended to push directly to main branch. In order to understand this, we need to learn what branches are and how to use them. But before moving on to that, I recommend taking a break and practice all that you have learnt up until now to let it sink in. When you have developed a good grasp on it, continue to branches.
 </div>
 
 ## Working Tree & Branches
 <div style="text-align: justify">
-When we are working on git and GitHub, we need to know how it is structured and handled inside our repo, basically our entire project is organized similar to a tree structure and you can say the the branch that we just pushed our test.cpp to, yes the "main branch" is the trunk of this tree. Our main branch holds the deployed version of our project which means that all the code on our main branch, is deployed in the field. Then how do we add new features to it? How do we maintain the features without compromising the main deployed code? How do we test and experiment with new feature without ruining our actual project? That is where feature branches come in. A feature branch is basically a branch that diverges out of the main branch, we use this branch to create a separate copy of our project and work on that copy so that we don't modify the actual project on the main branch. When our modifications are completed and we have tested the new feature, we merge our feature branch back into our main branch to apply these new features to the deployed project. This entire branch structure is called a "Working Tree".
+When we are working on git and GitHub, we need to know how it is structured and handled inside our repo, basically our entire project is organized similar to a tree structure and you can say the branch that we just pushed our test.cpp to, yes the "main branch" is the trunk of this tree. Our main branch holds the deployed version of our project which means that all the code on our main branch, is deployed in the field. Then how do we add new features to it? How do we maintain the features without compromising the main deployed code? How do we test and experiment with new features without ruining our actual project? That is where feature branches come in. A feature branch is basically a branch that diverges out of the main branch, we use this branch to create a separate copy of our project and work on that copy so that we don't modify the actual project on the main branch. When our modifications are completed and we have tested the new feature, we merge our feature branch back into our main branch to apply these new features to the deployed project. This entire branch structure is called a "Working Tree".
 </div>
 <img src="img/workingTree.png" alt="Working Tree Image" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
@@ -264,12 +264,12 @@ Before making our feature branch, it is a convention that we must sync our local
 git switch main
 git pull origin main
 ```
-The first command makes sure that we are on our main branch. If you are already on the main branch, you can skip this command. Then the second command fetches the files from remote repo onto our local repo to make sure that our local repo has the latest updates before we start working on anything. First we need a name for our feature branch, for now we will name it "feature-branch". Now let's make our feature branch by running this command:
+The first command makes sure that we are on our main branch. If you are already on the main branch, you can skip this command. Then, the second command fetches the files from remote repo onto our local repo to make sure that our local repo has the latest updates before we start working on anything. First we need a name for our feature branch, for now we will name it "feature-branch". Now let's make our feature branch by running this command:
 
 ```bash
 git switch -c feature-branch
 ```
-This command not only make a new feature branch but also takes us to it. You can also check which branches your have in your repo and your currently active branch by running this command:
+This command not only makes a new feature branch but also takes us to it. You can also check which branches your have in your repo and your currently active branch by running this command:
 
 ```bash
 git branch
@@ -326,7 +326,7 @@ So now, we know how to update our local repo to remote repo, make a feature bran
 
 #### Git Method
 <div style="text-align: justify">
-If you are working on your project as a solo developer in your personal repository than git method is the most suitable for this scenario. For this, you need to first switch to your main branch and then run the merge command as:
+If you are working on your project as a solo developer in your personal repository then git method is the most suitable for this scenario. For this, you need to first switch to your main branch and then run the merge command as:
 
 ```bash
 git switch main
@@ -338,7 +338,7 @@ The first command switches control to your main branch in local repo, the second
 
 #### GitHub Method
 <div style="text-align: justify">
-If you are working on a project with a team in a collaborative repository, it's preferred to use the GitHub method which requires you to generate a "PR", which stands for "Pull Request". It is basically a sort of letter that carries your updated file from you feature branch attached with it. Your team first reads your file to make sure that it doesn't require any changes to be made before it goes into the main branch for merge. When you are provided a certain number of approvals by your team, then you are allowed to merge your feature branch back into main branch. This makes sure that one individual doesn't mistakenly alter the main branch without the approval of the team. Let's learn how to generate a PR now after pushing to our remote repo's feature branch. First, go to your remote repo on GitHub. You will see an option to "Compare and Create Pull Request" that came when you pushed to remote's feature branch. However if you don't see this option, simply click on "Pull Requests" as shown here:
+If you are working on a project with a team in a collaborative repository, it's preferred to use the GitHub method which requires you to generate a "PR", which stands for "Pull Request". It is basically a sort of letter that carries your updated file from your feature branch attached with it. Your team first reads your file to make sure that it doesn't require any changes to be made before it goes into the main branch for merge. When you are provided a certain number of approvals by your team, then you are allowed to merge your feature branch back into the main branch. This makes sure that one individual doesn't accidentally alter the main branch without the approval of the team. Let's learn how to generate a PR now after pushing to our remote repo's feature branch. First, go to your remote repo on GitHub. You will see an option to "Compare and Create Pull Request" that came when you pushed to remote's feature branch. However if you don't see this option, simply click on "Pull Requests" as shown here:
 </div>
 <img src="img/pullReq.png" alt="Pull Request" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
@@ -462,7 +462,7 @@ If you want to start reading the commit history from the beginning of the projec
 
 ### Revert Commit
 <div style="text-align: justify">
-In order to revert our feature commit, we need its commit hash. We can look at the commit messages to know where we want to go. The last commit says "feat: Added Feature", so that's the one we need to revert. Let's copy the commit hash of this commit. Now in order to remove a feature, we must make a new branch like we made one to add it. Let's revise the branch making process shall we? First sync you local main with remote main using:
+In order to revert our feature commit, we need its commit hash. We can look at the commit messages to know where we want to go. The last commit says "feat: Added Feature", so that's the one we need to revert. Let's copy the commit hash of this commit. Now in order to remove a feature, we must make a new branch like we made one to add it. Let's revise the branch making process shall we? First sync your local main with remote main using:
 
 ```bash
 git switch main
@@ -692,7 +692,7 @@ Now we have to restore our project for First Feature on this branch and then upd
 ```bash
 git reset --hard fe312a3b08b8d16a3ac6a110a987d8a0ef307a0c
 ```
-What this will do? this will make the test.cpp on your restore-branch to the exact state as when First Feature was added, "hard" flag is the thing responsible for restoring the physical file to this point, if you use "soft" flag then your file would be staged as First Feature commit, but the physical code would not have been lost in your code editor. Anyways, "hard" resets the file to that commit. You can verify this by the absence of Second and Third Features in your test.cpp file in your code editor. Now we just need to update main using this restore-branch. We can do that by running the following commands:
+What this will do? this will bring the test.cpp on your restore-branch to the exact state as when First Feature was added, "hard" flag is the thing responsible for restoring the physical file to this point, if you use "soft" flag then your file would be staged as First Feature commit, but the physical code would not have been lost in your code editor. Anyways, "hard" resets the file to that commit. You can verify this by the absence of Second and Third Features in your test.cpp file in your code editor. Now we just need to update main using this restore-branch. We can do that by running the following commands:
 
 > [!WARNING]
 > **History Rewriting:** The upcoming commands contain a "force" flag which is capable of altering the remote repo's history of commits made in the project, so before using this flag make sure that you don't lose any neccessary data in your project's history log which might be needed later. In a professional repo with a team, force-pushing to a shared tracking branch like main is usually strictly forbidden because it can disrupt your team's local environments. Only use it on your personal or isolated feature branches!
@@ -744,7 +744,7 @@ As you can see, latest commit is First Feature now and successive commits have b
 
 ### Cleanup
 <div style="text-align: justify">
-Now that we have verified the restoration, let's perform the cleanup by deleting our restore branch from both local and remote repo. Again, I will skip the "git switch main" and "git pull origin main" because I am already on main branch so don't need to switch, and also main hasnt been changed after the last update to don't need to pull from remote's main:
+Now that we have verified the restoration, let's perform the cleanup by deleting our restore branch from both local and remote repo. Again, I will skip the "git switch main" and "git pull origin main" because I am already on main branch so don't need to switch, and also main hasn't been changed after the last update, wo we don't need to pull from remote's main:
 
 ```bash
 git branch -d restore-branch
@@ -765,7 +765,7 @@ Since git or GitHub don't know what to do, they tell the human about the rising 
 
 ### Form Merge Conflict
 <div style="text-align: justify">
-It's better to learn this process using the GitHub merge method instead of git method, because merge conflicts usually arise when multiple people are working together in the same file, and you don't usually have multiple people working on the same local machine, so most merge conflicts occur in a collaborative repo. For this let's try making two branches as if it were two different users, and then edit the same line in test.cpp to give rise to a merge conflict and then we will resolve it. Let's start by making both branches:
+It's better to learn this process using the GitHub merge method instead of git method, because merge conflicts usually arise when multiple people are working together in the same file, and you don't usually have multiple people working on the same local machine, so most merge conflicts occur in a collaborative repo. For this, let's try making two branches as if it were two different users, and then edit the same line in test.cpp to give rise to a merge conflict and then we will resolve it. Let's start by making both branches:
 
 ```bash
 git switch -c branch-1
@@ -832,7 +832,7 @@ Then add a description if you want and click the "Create Pull Request" button to
 </div>
 <img src="img/branch1PROpen.png" alt="Branch One PR Open" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
-Now go to main page of your repo and do the same process for branch-2's PR submission. Also, since I havent applied any security checks in my personal repo to PRs, I am getting this dialogue box:
+Now go to main page of your repo and do the same process for branch-2's PR submission. Also, since I haven't applied any security checks in my personal repo to PRs, I am getting this dialogue box:
 </div>
 <img src="img/PRsecurityCheck.png" alt="PR Security Check" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
@@ -857,7 +857,7 @@ This will open this side panel in which you have to click this "Resolve Conflict
 </div>
 <img src="img/resolveConflict.png" alt="Resolve Conflict" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
-Finally you will be greeted with the file having the merge conflict, GitHub will show you the changes made by your predecessor and the changes made by you as well separately. Along with that, it will also give you the option to keep your changes and discard the predecessor's, keep predecessor's changes and discard yours, or even keep both the changes. You can select whichever is needed depending on the scenario. This is the part where team communication comes in, such a scenario shall be discussed with team and only than should such a decision be taken.
+Finally you will be greeted with the file having the merge conflict, GitHub will show you the changes made by your predecessor and the changes made by you as well separately. Along with that, it will also give you the option to keep your changes and discard the predecessor's, keep predecessor's changes and discard yours, or even keep both the changes. You can select whichever is needed depending on the scenario. This is the part where team communication comes in, such a scenario shall be discussed with team and only then should such a decision be taken.
 </div>
 <img src="img/acceptChanges.png" alt="Accept Changes" width=600 style="border-radius: 10px">
 <div style="text-align: justify">
