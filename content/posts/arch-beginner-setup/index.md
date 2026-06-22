@@ -290,5 +290,5 @@ shutdown now
 <div style="text-align: justify">
 Now unplug the USB and start your system. If the system fails to load your Hard Drive, just go into bios again and edit the boot sequence to make sure that the Hard Drive is at the top of list, then apply and exit to boot into your Drive. You will be greeted with the grub bootloader menu:
 <img src="img/GrubMenu.png" alt="Grub Menu" width=600 style="border-radius: 10px">
-Select "Arch Linux" and hit enter. You should now be on the login screen, enter your user account password that you had setup during the system configuration to login. Welcome to the Desktop, you have successfully installed Arch Linux in your system. You can open the terminal by pressing "Ctrl+Alt+T", have fun learning the Arch commands now. Thank you for reading my blog, hope it helped. I am retro and this has been a beautiful journey, Sayonara!
+Select "Arch Linux" and hit enter. You should now be on the login screen, enter your user account password that you had setup during the system configuration to login. Welcome to the Desktop, you have successfully installed Arch Linux in your system. You can open the terminal by pressing "Ctrl+Alt+T", have fun learning the Arch commands now. Thank you for reading my blog, hope it helped. I am Kaido and this has been a beautiful journey, Sayonara!
 </div>

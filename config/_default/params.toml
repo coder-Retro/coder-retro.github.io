@@ -66,8 +66,8 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   disableHeroImageFilter = false # only used when layout equals hero
 
 [author]
-  name = "Retro"
-  image = "img/retro.jpg" # Make sure this matches your file in assets/img/
+  name = "Kaido"
+  image = "img/kaido.jpeg" # Make sure this matches your file in assets/img/
   headline = "Ai Student at NUCES | Coder 💻"
   bio = "A Guy Who's Interested In Tech."
   links = [

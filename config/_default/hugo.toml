@@ -2,7 +2,7 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://blowfish.page/docs/getting-started/
 
-title = "Retro Blogs"
+title = "Kaido Blogs"
 theme = "blowfish"                         # UNCOMMENT THIS LINE
 baseURL = "https://coder-retro.github.io/"
 defaultContentLanguage = "en"

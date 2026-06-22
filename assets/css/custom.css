@@ -1,9 +1,9 @@
 /* Home Page Profile Picture Settings */
 img.mb-2.h-36.w-36.rounded-full {
     box-sizing: border-box;
-    border: 4px solid #00ffff;
-    box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.4);
-    padding: 4px;
+    border: 4px solid #ffffff;
+    box-shadow: 0 0 15px 5px rgb(0, 217, 255, 0.5);
+    padding: 2 px;
     object-fit: cover;
     transform: none;
 }
@@ -11,7 +11,7 @@ img.mb-2.h-36.w-36.rounded-full {
 body {
     
     margin: 0;
-    color: white;
+    color: rgb(255, 255, 255);
     overflow-x: hidden;
     max-width: 100%;
 }
