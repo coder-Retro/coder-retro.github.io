@@ -29,7 +29,7 @@ body::before {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(2px);
+    filter: blur(1px);
     background-color: rgba(0, 0, 0, 0.2);
 }
 /* Space Between Header And Content */
