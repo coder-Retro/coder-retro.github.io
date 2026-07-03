@@ -274,7 +274,7 @@ This command not only makes a new feature branch but also takes us to it. You ca
 ```bash
 git branch
 ```
-You will see the list of all current branches on your repo and your currently active branch will be marked with a "*" symbol. My Demo Repo's branch list look like this right now:
+You will see the list of all current branches on your repo and your currently active branch will be marked with a "*" symbol. My Demo Repo's branch list looks like this right now:
 
 ```bash
 * feature-branch
@@ -744,7 +744,7 @@ As you can see, latest commit is First Feature now and successive commits have b
 
 ### Cleanup
 <div style="text-align: justify">
-Now that we have verified the restoration, let's perform the cleanup by deleting our restore branch from both local and remote repo. Again, I will skip the "git switch main" and "git pull origin main" because I am already on main branch so don't need to switch, and also main hasn't been changed after the last update, wo we don't need to pull from remote's main:
+Now that we have verified the restoration, let's perform the cleanup by deleting our restore branch from both local and remote repo. Again, I will skip the "git switch main" and "git pull origin main" because I am already on main branch so don't need to switch, and also main hasn't been changed after the last update, so we don't need to pull from remote's main:
 
 ```bash
 git branch -d restore-branch
@@ -922,7 +922,7 @@ In this guide, we learnt:
 <li>Advanced Version Control</li>
 <li>Merge Conflict</li>
 </ol>
-With these skills, you have developed all the ability to handle a project using git and GitHub, whether it is your solo project or a collaborated one. Best of luck ahead with this knowlede guys, hope I was able to help you in your learning journey. I am Retro and this has been a really long, but beautiful journey, Sayonara!
+With these skills, you have developed all the ability to handle a project using git and GitHub, whether it is your solo project or a collaborated one. Best of luck ahead with this knowlede guys, hope I was able to help you in your learning journey. I am Kaido and this has been a really long, but beautiful journey, Sayonara!
 </div>
 
 ## Credits
